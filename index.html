@@ -1,741 +1,596 @@
 <!doctype html>
-<html lang="pt" data-lang="pt">
+<html lang="pt">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="WKF Cadet, Junior & U21 World Championships 2026 — trip sheet for Bielsko-Biała">
 <meta name="theme-color" content="#0a0a0c">
-<title>Bielsko-Biała 2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Space+Mono:wght@400;700&display=swap">
+<title>WIKF Global Cup Atenas 2026</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap">
 <style>
-/* Layout: sticky frosted bar + scrollable tab strip; one panel visible at a time; 700px column; bilingual PT/EN via .pt/.en spans toggled on <html data-lang>; Pedro's dark system, single theme */
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+/* Layout: one sticky frosted bar with tab chips; each tab is a single column of cards, max 700px, no long scroll. */
 :root{
-  --bg:#0a0a0c; --card:#131316; --card2:#0f0f12; --line:#1e1e24; --fg:#ececf1; --muted:#9a9aa8; --dim:#5e5e6c;
+  --bg:#0a0a0c; --card:#131316; --card2:#18181d; --line:#1e1e24;
+  --fg:#f2f2f4; --mute:#9a9aa6; --dim:#6b6b78;
   --red:#ff6b6b; --orange:#f4a261; --teal:#2a9d8f; --blue:#457b9d; --purple:#9b5de5; --yellow:#e9c46a;
   --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mono:"Space Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --mono:"Space Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
   color-scheme:dark;
 }
-html[data-lang="en"] .pt{display:none}
-html:not([data-lang="en"]) .en{display:none}
 *{box-sizing:border-box}
-:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-img{max-width:100%}
-[hidden]{display:none!important}
-html,body{height:100%}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
-a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(42,157,143,.4)}
-a:focus-visible,button:focus-visible{outline:2px solid var(--yellow);outline-offset:2px}
-.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(10,10,12,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.bar-in{max-width:700px;margin:0 auto;padding:10px 16px 0}
-.bar-top{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:36px}
-.bar h1{margin:0;font-size:17px;font-weight:700;letter-spacing:-.01em}
-.bar .dates{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}
-.right{display:flex;align-items:center;gap:10px}
-.lang{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
-.lang button{min-height:32px;min-width:44px;padding:0 10px;border:0;background:transparent;color:var(--muted);font-family:var(--mono);font-size:12px;cursor:pointer}
-.lang button[aria-pressed="true"]{background:var(--red);color:#0a0a0c;font-weight:700}
-.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin:6px -16px 0;padding:0 16px}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:rgba(10,10,12,.92)}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:rgba(10,10,12,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.topin{max-width:700px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:10px 0}
+.brand{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.brand h1{font-family:var(--mono);font-size:15px;font-weight:700;margin:0;letter-spacing:.02em}
+.brand span{font-family:var(--mono);font-size:11px;color:var(--mute);white-space:nowrap}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-block:10px;scrollbar-width:none;-ms-overflow-style:none}
 .tabs::-webkit-scrollbar{display:none}
-.tab{flex:none;min-height:44px;padding:0 14px;border:0;background:transparent;color:var(--muted);font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap}
-.tab[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--red)}
-.wrap{max-width:700px;margin:0 auto;padding-block:20px 48px;padding-inline:16px}
-.panel{display:flex;flex-direction:column;gap:14px}
-.panel[hidden]{display:none}
-h2{margin:0;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
-.stack{display:flex;flex-direction:column;gap:10px}
-.kv{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;align-items:baseline}
-.k{color:var(--muted);font-size:14px}
-.v{font-family:var(--mono);font-size:14px;font-variant-numeric:tabular-nums;text-align:right}
-.flight{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;margin-top:10px}
-.flight .t{font-family:var(--mono);font-size:30px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
-.flight .c{font-size:13px;color:var(--muted);margin-top:4px}
-.flight .mid{text-align:center;font-family:var(--mono);font-size:11px;color:var(--dim);line-height:1.3}
-.flight .mid b{display:block;color:var(--muted);font-weight:400}
-.flight .r{text-align:right}
-.tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;padding:3px 8px;border-radius:6px;border:1px solid var(--line);color:var(--muted)}
-.tag.red{color:var(--red);border-color:rgba(255,107,107,.4)}
-.tag.orange{color:var(--orange);border-color:rgba(244,162,97,.4)}
-.tag.purple{color:var(--purple);border-color:rgba(155,93,229,.4)}
-.day{border-left:3px solid var(--line)}
-.day.hot{border-left-color:var(--red)}
-.day.warm{border-left-color:var(--orange)}
-.head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:8px}
-.head b{font-size:17px}
-.head .tag{flex:none}
-.sched{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
-.sched li{display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;font-size:15px}
-.sched .tm{font-family:var(--mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:2px}
-.sched .hi .tm{color:var(--red)}
-.sched .hi{color:var(--fg);font-weight:500}
-.sched .lo{color:var(--dim)}
-.note{font-size:14px;color:var(--muted);margin:10px 0 0;padding-top:10px;border-top:1px dashed var(--line)}
-.note b{color:var(--yellow);font-weight:500}
-.intro{font-size:15px;color:var(--muted);margin:0}
-.intro b{color:var(--fg);font-weight:500}
-.place b{display:block;font-size:16px}
-.place .addr{font-family:var(--mono);font-size:13px;color:var(--muted);margin-top:2px;line-height:1.5}
-.place .why{font-size:14px;color:var(--muted);margin-top:6px}
-.contact{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
-.contact:last-child{border-bottom:0}
-.contact .n{font-size:15px;font-weight:500}
-.contact .s{font-size:13px;color:var(--muted);margin-top:1px}
-.contact .num{font-family:var(--mono);font-size:15px;font-variant-numeric:tabular-nums;white-space:nowrap;user-select:all}
-.contact .num.big{font-size:22px;font-weight:700;color:var(--red)}
-.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border-radius:10px;border:1px solid var(--line);background:var(--card2);color:var(--fg);font-family:var(--mono);font-size:13px;cursor:pointer;gap:8px}
-.btn:active{background:#18181d}
-.btn.sm{min-height:36px;padding:0 10px;font-size:12px}
-.row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.pl{font-family:var(--mono);font-size:14px;line-height:1.6;background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:12px;margin:0;white-space:pre-wrap;word-break:break-word;user-select:all}
-.tr{font-size:13px;color:var(--dim);margin:6px 0 0}
-table{width:100%;border-collapse:collapse;font-size:14px}
-td{padding:8px 0;border-bottom:1px solid var(--line);vertical-align:top}
-td:last-child{font-family:var(--mono);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.tab{flex:0 0 auto;min-height:44px;padding:0 14px;border-radius:22px;border:1px solid var(--line);background:var(--card);color:var(--mute);font:500 14px var(--sans);cursor:pointer;display:flex;align-items:center;gap:6px;white-space:nowrap}
+.tab[aria-selected="true"]{background:var(--red);border-color:var(--red);color:#0a0a0c;font-weight:700}
+.tab:focus-visible{outline:2px solid var(--yellow);outline-offset:2px}
+.tab i{font-style:normal;font-family:var(--mono);font-size:11px;opacity:.8}
+main{max-width:700px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:16px 48px}
+section[role="tabpanel"]{display:flex;flex-direction:column;gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;min-width:0}
+.card h2{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin:0 0 10px}
+.card h3{font-size:17px;margin:0 0 4px;text-wrap:balance}
+.card p{margin:0 0 8px}
+.card p:last-child,.card ul:last-child{margin-bottom:0}
+.card ul{margin:0;padding-left:18px}
+.card li{margin:4px 0}
+.card li::marker{color:var(--dim)}
+.lead{font-weight:700;color:var(--fg)}
+.eye{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.day{border-left:3px solid var(--acc,var(--red))}
+.day .dh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:8px}
+.day .dh h3{margin:0}
+.day .dh .d{font-family:var(--mono);font-size:12px;color:var(--mute);white-space:nowrap}
+.tl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-variant-numeric:tabular-nums}
+.tl .t{font-family:var(--mono);font-size:13px;color:var(--yellow);white-space:nowrap;padding-top:1px}
+.tl .t.lis{color:var(--dim)}
+.tl .e{min-width:0}
+.tl .e b{font-weight:700}
+.tl .e small{display:block;color:var(--mute);font-size:13px}
+.me{color:var(--red);font-weight:700}
+.pill{display:inline-block;font-family:var(--mono);font-size:11px;padding:2px 8px;border-radius:10px;border:1px solid var(--line);color:var(--mute);vertical-align:middle;white-space:nowrap}
+.pill.t2{border-color:var(--blue);color:var(--blue)}
+.pill.t1{border-color:var(--purple);color:var(--purple)}
+.pill.t3{border-color:var(--teal);color:var(--teal)}
+.pill.ok{border-color:var(--teal);color:var(--teal)}
+.pill.warn{border-color:var(--orange);color:var(--orange)}
+.ev{display:grid;grid-template-columns:1fr auto;gap:6px 12px;align-items:start;padding:10px 0;border-top:1px solid var(--line)}
+.ev:first-of-type{border-top:0;padding-top:0}
+.ev .n{font-weight:700}
+.ev .s{color:var(--mute);font-size:13px}
+.ev .w{font-family:var(--mono);font-size:13px;color:var(--yellow);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.ev .w small{display:block;color:var(--dim);font-size:11px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-variant-numeric:tabular-nums}
+.kv .k{font-family:var(--mono);font-size:12px;color:var(--mute);padding-top:2px;white-space:nowrap}
+.kv .v{min-width:0;overflow-wrap:anywhere}
+.flight{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;margin:6px 0 10px}
+.flight .ap{font-family:var(--mono);font-size:26px;font-weight:700;line-height:1}
+.flight .ap small{display:block;font-size:12px;color:var(--mute);font-weight:400;margin-top:4px}
+.flight .ap.r{text-align:right}
+.flight .arr{color:var(--dim);font-family:var(--mono);font-size:12px;text-align:center}
+.flight .arr b{display:block;color:var(--fg);font-size:14px}
+.route{display:grid;grid-template-columns:auto 1fr;gap:0 12px}
+.route .dot{width:10px;height:10px;border-radius:50%;background:var(--acc,var(--teal));margin-top:7px;position:relative}
+.route .dot.l::after{content:"";position:absolute;left:4px;top:12px;width:2px;height:calc(100% + 18px);background:var(--line)}
+.route .st{padding-bottom:14px;min-width:0}
+.route .st:last-child{padding-bottom:0}
+.route .st b{display:block}
+.route .st small{color:var(--mute)}
+.copy{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border-radius:10px;border:1px solid var(--line);background:var(--card2);color:var(--fg);font:500 14px var(--sans);cursor:pointer;max-width:100%}
+.copy code{font-family:var(--mono);font-size:12px;color:var(--yellow);overflow-wrap:anywhere;white-space:normal;text-align:left}
+.copy:focus-visible{outline:2px solid var(--yellow);outline-offset:2px}
+.row{display:flex;flex-wrap:wrap;gap:8px}
+a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(42,157,143,.4)}
+.note{border-left:3px solid var(--orange);padding-left:12px;color:var(--fg)}
+.note.red{border-color:var(--red)}
+.note.teal{border-color:var(--teal)}
+table{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:6px 8px 6px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);font-weight:400}
 tr:last-child td{border-bottom:0}
-.rate{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-.rate .big{font-family:var(--mono);font-size:32px;font-weight:700;line-height:1;color:var(--yellow)}
-.rate .sub{font-size:13px;color:var(--muted)}
-.quick{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:8px;margin-top:12px}
-.quick div{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums}
-.quick div span{display:block;color:var(--muted);font-size:11px}
-.good{color:var(--teal)}.bad{color:var(--red)}
-.foot{font-size:12px;color:var(--dim);line-height:1.6}
-.foot a{color:var(--muted);border-color:var(--line)}
-.map{width:100%;max-width:100%;height:auto;display:block}
-.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-top:10px}
-.legend div{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px}
-.legend i{width:10px;height:10px;border-radius:50%;flex:none}
-.route{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
-.route:last-child{border-bottom:0}
-.route .dir{font-family:var(--mono);font-size:13px;white-space:nowrap}
-.route .dist{font-family:var(--mono);font-size:13px;color:var(--muted);white-space:nowrap;text-align:right}
-.route .via{font-size:13px;color:var(--muted)}
-.prog{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0}
-.prog li{display:grid;grid-template-columns:92px minmax(0,1fr);gap:10px;font-size:14px;padding:6px 0;border-bottom:1px solid var(--line)}
-.prog li:last-child{border-bottom:0}
-.prog .tm{font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:2px}
-.prog .ev b{font-weight:500}
-.prog .ev span{color:var(--muted)}
-.prog li.mine{background:linear-gradient(90deg,rgba(255,107,107,.08),transparent);margin:0 -16px;padding-inline:16px;border-left:3px solid var(--red)}
-.prog li.mine .tm{color:var(--red)}
-.prog li.aw{color:var(--dim)}
-.prog li.aw .ev b{font-weight:400}
-.blk{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:12px 0 4px}
-.blk:first-child{margin-top:0}
-.blk.k{color:var(--teal)}.blk.u{color:var(--purple)}.blk.c{color:var(--blue)}.blk.j{color:var(--orange)}
-.ph{padding:10px 0;border-bottom:1px solid var(--line)}
-.ph:last-child{border-bottom:0}
-.ph .pol{font-size:17px;font-weight:500;line-height:1.35;user-select:all}
-.ph .say{font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:2px}
-.ph .mean{font-size:14px;color:var(--muted);margin-top:3px}
-.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--card);border:1px solid var(--line);color:var(--fg);font-family:var(--mono);font-size:12px;padding:8px 14px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .2s}
+.scroll{overflow-x:auto}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.tile{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-width:0}
+.tile .k{font-family:var(--mono);font-size:11px;color:var(--mute);letter-spacing:.06em;text-transform:uppercase}
+.tile .v{font-size:18px;font-weight:700;font-variant-numeric:tabular-nums;margin-top:2px}
+.tile .v small{display:block;font-size:12px;font-weight:400;color:var(--mute)}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--teal);color:#0a0a0c;font:700 13px var(--sans);padding:10px 16px;border-radius:10px;z-index:20;opacity:0;pointer-events:none;transition:opacity .2s}
 .toast.on{opacity:1}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (prefers-reduced-motion:reduce){.toast{transition:none}}
 </style>
-<script>(function(){var l='pt';try{l=localStorage.getItem('bb26lang')||'pt'}catch(e){}document.documentElement.setAttribute('data-lang',l)})();</script>
-
 </head>
 <body>
-<div class="bar"><div class="bar-in">
-  <div class="bar-top">
-    <h1>Bielsko-Biała 2026</h1>
-    <div class="right"><span class="dates">14→18 OUT · UTC+2</span>
-      <div class="lang" role="group" aria-label="Language"><button id="lang-pt" aria-pressed="true">PT</button><button id="lang-en" aria-pressed="false">EN</button></div>
+<header class="top"><div class="topin">
+  <div class="brand"><h1>WIKF GLOBAL CUP · ATENAS</h1><span>21–26 OUT 2026 · hora de Atenas</span></div>
+  <div class="tabs" role="tablist" aria-label="Secções">
+    <button class="tab" role="tab" data-tab="dias" aria-selected="true">Dias</button>
+    <button class="tab" role="tab" data-tab="prova">Prova <i>×3</i></button>
+    <button class="tab" role="tab" data-tab="rotas">Rotas</button>
+    <button class="tab" role="tab" data-tab="voos">Voos</button>
+    <button class="tab" role="tab" data-tab="programa">Programa</button>
+    <button class="tab" role="tab" data-tab="info">Info</button>
+  </div>
+</div></header>
+
+<main>
+
+<!-- ============ DIAS ============ -->
+<section id="dias" role="tabpanel">
+
+  <div class="card">
+    <h2>Regra do relógio</h2>
+    <p><span class="lead">Atenas = Lisboa + 2 h</span> durante toda a viagem. Ambos os países atrasam o relógio na madrugada de domingo 25 (04:00 → 03:00 em Atenas), por isso a diferença não muda. Horas em amarelo = Atenas. Cinzento = Lisboa, para quem segue de casa.</p>
+  </div>
+
+  <div class="card day" style="--acc:var(--blue)">
+    <div class="dh"><h3>Qua 21 · Viagem</h3><span class="d">OPO → MUC → ATH</span></div>
+    <div class="tl">
+      <span class="t">04:15 <small class="lis"></small></span><span class="e"><b>Uber de casa</b><small>Lisboa. Bag drop fecha 05:35. Boarding 05:50, lugar 6C</small></span>
+      <span class="t">06:20</span><span class="e"><b>LH1789 OPO → MUC</b><small>Lisboa. 2h50. Aterra 10:10 em Munique, Gate G30, T2</small></span>
+      <span class="t">10:10</span><span class="e"><b>Munique T2, Área G</b><small>Local. 70 min de ligação, 5 min a pé. Cafeína 100–150 mg aqui, última do dia. Boarding 10:50</small></span>
+      <span class="t">11:20</span><span class="e"><b>LH1752 MUC → ATH</b><small>Local. 2h35. Lugares 23A · 22A · 29F · 29E</small></span>
+      <span class="t">14:55</span><span class="e"><b>Aterragem em Atenas</b><small>Malas ~15:20. Táxi da praça, 25–35 min pela Attiki Odos</small></span>
+      <span class="t">~16:00</span><span class="e"><b>Check-in Airbnb</b><small>Mpasdeki 3, Marousi 151 26</small></span>
+      <span class="t">17:00–19:00</span><span class="e"><b>Seminário Jon Wicks</b> <span class="pill">opcional · 40 €</span><small>Hotel President. A janela de levantamento de passes (13:00–16:00) fecha antes de aterrares; o registo de atleta é quinta</small></span>
+      <span class="t">~20:00</span><span class="e"><b>Jantar perto do Airbnb</b><small>Sem cafeína. Melatonina ~21:00. Cama 22:00</small></span>
     </div>
   </div>
-  <div class="tabs" role="tablist">
-    <button class="tab" role="tab" id="tab-days" data-panel="days" aria-selected="true"><span class="pt">Dias</span><span class="en">Days</span></button>
-    <button class="tab" role="tab" id="tab-prog" data-panel="prog" aria-selected="false"><span class="pt">Programa</span><span class="en">Programme</span></button>
-    <button class="tab" role="tab" id="tab-taxi" data-panel="taxi" aria-selected="false"><span class="pt">Mapa · Táxi</span><span class="en">Map · Taxi</span></button>
-    <button class="tab" role="tab" id="tab-phrases" data-panel="phrases" aria-selected="false"><span class="pt">Frases</span><span class="en">Phrases</span></button>
-    <button class="tab" role="tab" id="tab-money" data-panel="money" aria-selected="false"><span class="pt">Dinheiro</span><span class="en">Money</span></button>
-    <button class="tab" role="tab" id="tab-sos" data-panel="sos" aria-selected="false"><span class="pt">Emergência</span><span class="en">Emergency</span></button>
-    <button class="tab" role="tab" id="tab-flights" data-panel="flights" aria-selected="false"><span class="pt">Voos</span><span class="en">Flights</span></button>
-    <button class="tab" role="tab" id="tab-tickets" data-panel="tickets" aria-selected="false"><span class="pt">Bilhetes</span><span class="en">Tickets</span></button>
-  </div>
-</div></div>
 
-<div class="wrap">
-
-<!-- DAYS -->
-<section class="panel" id="days" role="tabpanel">
-  <div class="card">
-    <p class="intro">
-      <span class="pt">Quinta é o dia que conta. A Leonor começa às <b>12:45 no tatami 8</b>, o André às <b>16:20 no tatami 1</b>. Chegar ao pavilhão por volta das 12:15, almoçar lá entre os dois e sair às 18:00 na pior das hipóteses. Se a Leonor perder na pool, a repescagem dela (17:00, T5) sobrepõe-se à pool do André (T1): combinem antes quem fica com quem.</span>
-      <span class="en">Thursday is the day that matters. Leonor starts at <b>12:45 on tatami 8</b>, André at <b>16:20 on tatami 1</b>. Get to the hall around 12:15, eat there between the two, and leave by 18:00 at the latest. If Leonor loses in pool, her repechage (17:00, T5) overlaps André's pool (T1): agree beforehand who stays with whom.</span>
-    </p>
-  </div>
-
-  <div class="card day">
-    <div class="head"><b><span class="pt">Qua 14</span><span class="en">Wed 14</span></b><span class="tag"><span class="pt">DIA U21</span><span class="en">U21 DAY</span></span></div>
-    <ul class="sched">
-      <li class="lo"><span class="tm">12:00–21:30</span><span><span class="pt">Eliminatórias kumite U21</span><span class="en">U21 kumite eliminations</span></span></li>
-      <li><span class="tm">15:10</span><span><span class="pt">Aterragem KRK → transfer → hotel ~17:00</span><span class="en">Land KRK → transfer → hotel ~17:00</span></span></li>
-    </ul>
-  </div>
-
-  <div class="card day hot">
-    <div class="head"><b><span class="pt">Qui 15</span><span class="en">Thu 15</span></b><span class="tag red">LEONOR · ANDRÉ</span></div>
-    <svg class="map" viewBox="0 0 360 452" role="img" aria-label="Thursday timetable" style="margin:4px 0 10px">
-      <defs><pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="#5e5e6c" stroke-width="1"/></pattern></defs>
-      <rect width="360" height="452" rx="12" fill="#0f0f12"/>
-      <text x="126" y="24" text-anchor="middle" fill="#2a9d8f" font-family="Space Mono,monospace" font-size="11" font-weight="700" letter-spacing="1">LEONOR · F −53</text>
-      <text x="282" y="24" text-anchor="middle" fill="#f4a261" font-family="Space Mono,monospace" font-size="11" font-weight="700" letter-spacing="1">ANDRÉ · M +76</text>
-      <g font-family="Space Mono,monospace" font-size="10" fill="#5e5e6c">
-        <line x1="48" y1="40" x2="356" y2="40" stroke="#1e1e24"/><text x="4" y="44">12:00</text>
-        <line x1="48" y1="100" x2="356" y2="100" stroke="#1e1e24"/><text x="4" y="104">13:00</text>
-        <line x1="48" y1="160" x2="356" y2="160" stroke="#1e1e24"/><text x="4" y="164">14:00</text>
-        <line x1="48" y1="220" x2="356" y2="220" stroke="#1e1e24"/><text x="4" y="224">15:00</text>
-        <line x1="48" y1="280" x2="356" y2="280" stroke="#1e1e24"/><text x="4" y="284">16:00</text>
-        <line x1="48" y1="340" x2="356" y2="340" stroke="#1e1e24"/><text x="4" y="344">17:00</text>
-        <line x1="48" y1="400" x2="356" y2="400" stroke="#1e1e24"/><text x="4" y="404">18:00</text>
-        <line x1="48" y1="430" x2="356" y2="430" stroke="#1e1e24"/><text x="4" y="434">18:30</text>
-      </g>
-      <rect x="52" y="160" width="304" height="120" fill="url(#hatch)" opacity=".25"/>
-      <text x="204" y="224" text-anchor="middle" fill="#5e5e6c" font-family="Space Mono,monospace" font-size="10"><tspan class="pt">ALMOÇO NO PAVILHÃO · NÃO SAIR</tspan><tspan class="en">LUNCH AT VENUE · DON'T LEAVE</tspan></text>
-      <line x1="48" y1="55" x2="356" y2="55" stroke="#e9c46a" stroke-dasharray="3 3"/>
-      <text x="352" y="52" text-anchor="end" fill="#e9c46a" font-family="Space Mono,monospace" font-size="9"><tspan class="pt">CHEGAR 12:15</tspan><tspan class="en">ARRIVE 12:15</tspan></text>
-      <line x1="48" y1="400" x2="356" y2="400" stroke="#e9c46a" stroke-dasharray="3 3"/>
-      <text x="352" y="412" text-anchor="end" fill="#e9c46a" font-family="Space Mono,monospace" font-size="9">TÁXI 18:00</text>
-      <rect x="52" y="85" width="148" height="65" rx="6" fill="#2a9d8f"/>
-      <text x="60" y="100" fill="#0a0a0c" font-family="DM Sans,sans-serif" font-size="12" font-weight="700">POOL 4 · TATAMI 8</text>
-      <text x="60" y="114" fill="#0a0a0c" font-family="Space Mono,monospace" font-size="10">12:45 – 13:50</text>
-      <text x="60" y="128" fill="#0a0a0c" font-family="DM Sans,sans-serif" font-size="10"><tspan class="pt">última da pool</tspan><tspan class="en">bottom of pool</tspan></text>
-      <text x="60" y="142" fill="#0a0a0c" font-family="DM Sans,sans-serif" font-size="10"><tspan class="pt">combates de pool</tspan><tspan class="en">pool bouts</tspan></text>
-      <rect x="52" y="150" width="148" height="16" rx="4" fill="#2a9d8f" opacity=".55"/>
-      <text x="60" y="162" fill="#ececf1" font-family="Space Mono,monospace" font-size="9"><tspan class="pt">13:50 GANHA → vs pool 2 · T7</tspan><tspan class="en">13:50 WIN → vs pool 2 · T7</tspan></text>
-      <rect x="52" y="340" width="148" height="40" rx="6" fill="none" stroke="#2a9d8f" stroke-width="1.5" stroke-dasharray="4 3"/>
-      <text x="60" y="355" fill="#2a9d8f" font-family="DM Sans,sans-serif" font-size="11" font-weight="700"><tspan class="pt">REPESCAGEM · T5</tspan><tspan class="en">REPECHAGE · T5</tspan></text>
-      <text x="60" y="368" fill="#9a9aa8" font-family="Space Mono,monospace" font-size="9"><tspan class="pt">17:00 – 17:40 · se perder</tspan><tspan class="en">17:00 – 17:40 · if lost</tspan></text>
-      <text x="60" y="378" fill="#9a9aa8" font-family="DM Sans,sans-serif" font-size="9"><tspan class="pt">só se quem a venceu chegar à final</tspan><tspan class="en">only if pool winner reaches final</tspan></text>
-      <rect x="208" y="300" width="148" height="70" rx="6" fill="#f4a261"/>
-      <text x="216" y="315" fill="#0a0a0c" font-family="DM Sans,sans-serif" font-size="12" font-weight="700">POOL 1 · TATAMI 1</text>
-      <text x="216" y="329" fill="#0a0a0c" font-family="Space Mono,monospace" font-size="10">16:20 – 17:30</text>
-      <text x="216" y="343" fill="#0a0a0c" font-family="DM Sans,sans-serif" font-size="10"><tspan class="pt">estar no T1 às 16:00</tspan><tspan class="en">be at T1 by 16:00</tspan></text>
-      <text x="216" y="357" fill="#0a0a0c" font-family="DM Sans,sans-serif" font-size="10"><tspan class="pt">combates de pool</tspan><tspan class="en">pool bouts</tspan></text>
-      <rect x="208" y="370" width="148" height="14" rx="4" fill="#f4a261" opacity=".55"/>
-      <text x="216" y="380" fill="#ececf1" font-family="Space Mono,monospace" font-size="9"><tspan class="pt">17:30 GANHA → vencedores · T1</tspan><tspan class="en">17:30 WIN → pool-winners · T1</tspan></text>
-      <rect x="208" y="385" width="148" height="15" rx="4" fill="none" stroke="#f4a261" stroke-width="1.5" stroke-dasharray="4 3"/>
-      <text x="216" y="396" fill="#f4a261" font-family="Space Mono,monospace" font-size="9"><tspan class="pt">17:35–18:00 REPESCAGEM · T1</tspan><tspan class="en">17:35–18:00 REPECHAGE · T1</tspan></text>
-      <path d="M202 342 L205 342 L205 368 L202 368" fill="none" stroke="#ff6b6b" stroke-width="1.5"/>
-      <text x="204" y="332" text-anchor="middle" fill="#ff6b6b" font-family="Space Mono,monospace" font-size="9"><tspan class="pt">CHOQUE</tspan><tspan class="en">CLASH</tspan></text>
-    </svg>
-    <ul class="sched">
-      <li class="lo"><span class="tm">11:00–20:30</span><span><span class="pt">Eliminatórias kumite júnior, todas as categorias</span><span class="en">Junior kumite eliminations, all categories</span></span></li>
-      <li class="hi"><span class="tm">12:45–13:50</span><span><b>Leonor</b> · F −53 · pool 4 · <b>tatami 8</b></span></li>
-      <li class="hi"><span class="tm">13:50–13:55</span><span><span class="pt">Leonor ganha a pool → vs vencedora pool 2 · </span><span class="en">Leonor wins pool → vs pool 2 winner · </span><b>tatami 7</b></span></li>
-      <li><span class="tm">17:00–17:40</span><span><span class="pt">Repescagem Leonor, se necessário · </span><span class="en">Leonor repechage, if needed · </span><b>tatami 5</b></span></li>
-      <li class="hi"><span class="tm">16:20–17:30</span><span><b>André</b> · M +76 · pool 1 · <b>tatami 1</b></span></li>
-      <li class="hi"><span class="tm">17:30–17:35</span><span><span class="pt">André ganha a pool → combate de vencedores · </span><span class="en">André wins pool → pool-winners bout · </span><b>tatami 1</b></span></li>
-      <li><span class="tm">17:35–18:00</span><span><span class="pt">Repescagem André, se necessário · </span><span class="en">André repechage, if needed · </span><b>tatami 1</b></span></li>
-    </ul>
-    <p class="note">
-      <span class="pt">Quem ganha a pool na quinta vai à final de sábado; quem ganha a repescagem vai ao combate de bronze de sábado às 15:20. As horas são as do sorteio; os tatamis atrasam, nunca adiantam.</span>
-      <span class="en">Pool winner on Thursday goes to Saturday's final; repechage winner goes to Saturday's bronze bout at 15:20. Times are the draw timetable; tatamis run late, never early.</span>
-    </p>
-  </div>
-
-  <div class="card day">
-    <div class="head"><b><span class="pt">Sex 16</span><span class="en">Fri 16</span></b><span class="tag"><span class="pt">DIA CADETE</span><span class="en">CADET DAY</span></span></div>
-    <ul class="sched">
-      <li class="lo"><span class="tm">11:00–17:30</span><span><span class="pt">Eliminatórias kumite cadete</span><span class="en">Cadet kumite eliminations</span></span></li>
-      <li><span class="tm">18:00</span><span><span class="pt">Cerimónia de abertura no pavilhão</span><span class="en">Opening ceremony at the hall</span></span></li>
-    </ul>
-    <p class="note"><span class="pt">Dia livre. A delegação do Toni estará na cerimónia; vão se alguém quiser a fotografia.</span><span class="en">Free day. Toni's delegation will be at the ceremony; go if someone wants the photo.</span></p>
-  </div>
-
-  <div class="card day warm">
-    <div class="head"><b><span class="pt">Sáb 17</span><span class="en">Sat 17</span></b><span class="tag orange"><span class="pt">MEDALHAS JÚNIOR</span><span class="en">JUNIOR MEDALS</span></span></div>
-    <ul class="sched">
-      <li class="lo"><span class="tm">10:00–13:20</span><span><span class="pt">Bronzes + finais cadete</span><span class="en">Cadet bronzes + finals</span></span></li>
-      <li><span class="tm">15:00–15:20</span><span><span class="pt">Bronzes kata júnior</span><span class="en">Junior kata bronzes</span></span></li>
-      <li class="hi"><span class="tm">15:20–16:20</span><span><span class="pt">Bronzes kumite júnior, todas as categorias</span><span class="en">Junior kumite bronzes, all categories</span></span></li>
-      <li><span class="tm">16:30–16:50</span><span><span class="pt">Finais kata júnior</span><span class="en">Junior kata finals</span></span></li>
-      <li><span class="tm">17:05–17:25</span><span><span class="pt">Finais M −55 / −61 / −68</span><span class="en">M −55 / −61 / −68 finals</span></span></li>
-      <li class="hi"><span class="tm">17:40–18:00</span><span><span class="pt">Finais F −48 / <b>−53</b> / −59</span><span class="en">F −48 / <b>−53</b> / −59 finals</span></span></li>
-      <li class="hi"><span class="tm">18:15–18:40</span><span><span class="pt">Finais F −66 / +66 · M −76 / <b>+76</b></span><span class="en">F −66 / +66 · M −76 / <b>+76</b> finals</span></span></li>
-      <li><span class="tm">18:40–19:00</span><span><span class="pt">Entrega de medalhas</span><span class="en">Medal awards</span></span></li>
-    </ul>
-    <p class="note"><span class="pt">Portas para a sessão júnior ~14:30. Marcar o Lukas para as 19:15 antes de começarem as medalhas.</span><span class="en">Door for the junior session ~14:30. Book Lukas for 19:15 before the awards start.</span></p>
-  </div>
-
-  <div class="card day">
-    <div class="head"><b><span class="pt">Dom 18</span><span class="en">Sun 18</span></b><span class="tag"><span class="pt">MEDALHAS U21</span><span class="en">U21 MEDALS</span></span></div>
-    <ul class="sched">
-      <li><span class="tm">06:15</span><span><span class="pt">Saída de Bystra para KRK</span><span class="en">Leave Bystra for KRK</span></span></li>
-      <li class="lo"><span class="tm">10:00–15:45</span><span><span class="pt">Finais U21, kata equipas, encerramento. Nada de júnior.</span><span class="en">U21 finals, team kata, closing. Nothing junior.</span></span></li>
-    </ul>
-  </div>
-  <p class="foot"><span class="pt">Horas confirmadas pelo programa oficial de 13 Out; programa completo no separador Programa. Hora local da Polónia (CEST), uma hora à frente de Lisboa. Os blocos de finais atrasam 15–30 min. Fonte: </span><span class="en">Times confirmed by the official programme posted 13 Oct; full schedule in the Programme tab. Poland local (CEST), one hour ahead of Lisbon. Finals blocks slip 15–30 min. Source: </span><a href="https://www.wkf.net/files/pdf/championships/2nd%20Bulletin_2026.pdf">WKF 2nd Bulletin</a>.</p>
-</section>
-
-<!-- PROGRAMME -->
-<section class="panel" id="prog" role="tabpanel" hidden>
-  <p class="foot" style="margin:0"><span class="pt">Programa oficial WKF, publicado a 13 Out. Hora local da Polónia. Linhas destacadas: Leonor (F −53) e André (M +76).</span><span class="en">Official WKF programme, posted 13 Oct. Poland local time. Highlighted rows are Leonor (F −53) and André (M +76).</span></p>
-
-  <div class="card">
-    <div class="head"><b><span class="pt">Qua 14 · Eliminatórias</span><span class="en">Wed 14 · Preliminaries</span></b><span class="tag purple">U21</span></div>
-    <div class="blk k"><span class="pt">Kata individual U21 · Kata equipas cadete/júnior</span><span class="en">Kata individual U21 · Kata team cadet/junior</span></div>
-    <ul class="prog">
-      <li><span class="tm">09:00–12:00</span><span class="ev"><b><span class="pt">Kata U21 individual</span><span class="en">Kata U21 individual</span></b> <span><span class="pt">eliminatórias + repescagem, F/M</span><span class="en">eliminations + repechage, F/M</span></span></span></li>
-      <li><span class="tm"></span><span class="ev"><b><span class="pt">Kata equipas cadete + júnior</span><span class="en">Kata team cadet + junior</span></b> <span><span class="pt">eliminatórias + repescagem, F/M</span><span class="en">eliminations + repechage, F/M</span></span></span></li>
-    </ul>
-    <div class="blk u">Kumite U21</div>
-    <ul class="prog">
-      <li><span class="tm">12:00–21:30</span><span class="ev"><b>F</b> <span>−50 · −55 · −61 · −68 · +68</span></span></li>
-      <li><span class="tm"></span><span class="ev"><b>M</b> <span>−60 · −67 · −75 · −84 · +84</span></span></li>
-      <li><span class="tm"></span><span class="ev"><b><span class="pt">Repescagens</span><span class="en">Repechages</span></b> <span>F/M U21</span></span></li>
-    </ul>
-  </div>
-
-  <div class="card day hot">
-    <div class="head"><b><span class="pt">Qui 15 · Eliminatórias</span><span class="en">Thu 15 · Preliminaries</span></b><span class="tag red">JÚNIOR</span></div>
-    <div class="blk k"><span class="pt">Kata individual júnior</span><span class="en">Kata individual junior</span></div>
-    <ul class="prog">
-      <li><span class="tm">09:00–11:00</span><span class="ev"><b><span class="pt">Kata júnior</span><span class="en">Kata junior</span></b> <span><span class="pt">eliminatórias + repescagem, F/M</span><span class="en">eliminations + repechage, F/M</span></span></span></li>
-    </ul>
-    <div class="blk j"><span class="pt">Kumite júnior</span><span class="en">Kumite junior</span></div>
-    <ul class="prog">
-      <li class="mine"><span class="tm">11:00–20:30</span><span class="ev"><b>F</b> <span>−48 · </span><b>−53</b><span> · −59 · −66 · +66</span></span></li>
-      <li class="mine"><span class="tm"></span><span class="ev"><b>M</b> <span>−55 · −61 · −68 · −76 · </span><b>+76</b></span></li>
-      <li><span class="tm"></span><span class="ev"><b><span class="pt">Repescagens</span><span class="en">Repechages</span></b> <span><span class="pt">F/M júnior, no mesmo dia</span><span class="en">F/M junior, same day</span></span></span></li>
-    </ul>
-    <p class="note"><b><span class="pt">Sorteio:</span><span class="en">Draw:</span></b> <span class="pt">Leonor pool 4, tatami 8, 12:45–13:50 → combate de vencedoras T7 13:50 · repescagem T5 17:00–17:40. André pool 1, tatami 1, 16:20–17:30 → combate de vencedores T1 17:30 · repescagem T1 17:35–18:00. Detalhe no separador Dias.</span><span class="en">Leonor pool 4, tatami 8, 12:45–13:50 → pool-winner bout T7 13:50 · repechage T5 17:00–17:40. André pool 1, tatami 1, 16:20–17:30 → pool-winner bout T1 17:30 · repechage T1 17:35–18:00. Detail in the Days tab.</span></p>
-  </div>
-
-  <div class="card">
-    <div class="head"><b><span class="pt">Sex 16 · Eliminatórias</span><span class="en">Fri 16 · Preliminaries</span></b><span class="tag"><span class="pt">CADETE</span><span class="en">CADET</span></span></div>
-    <div class="blk k"><span class="pt">Kata individual cadete</span><span class="en">Kata individual cadet</span></div>
-    <ul class="prog">
-      <li><span class="tm">09:00–11:00</span><span class="ev"><b><span class="pt">Kata cadete</span><span class="en">Kata cadet</span></b> <span><span class="pt">eliminatórias + repescagem, F/M</span><span class="en">eliminations + repechage, F/M</span></span></span></li>
-    </ul>
-    <div class="blk c"><span class="pt">Kumite cadete</span><span class="en">Kumite cadet</span></div>
-    <ul class="prog">
-      <li><span class="tm">11:00–17:30</span><span class="ev"><b>F</b> <span>−47 · −54 · −61 · +61</span></span></li>
-      <li><span class="tm"></span><span class="ev"><b>M</b> <span>−52 · −57 · −63 · −70 · +70</span></span></li>
-      <li><span class="tm"></span><span class="ev"><b><span class="pt">Repescagens</span><span class="en">Repechages</span></b> <span><span class="pt">F/M cadete</span><span class="en">F/M cadet</span></span></span></li>
-      <li><span class="tm">18:00</span><span class="ev"><b><span class="pt">Cerimónia de abertura</span><span class="en">Opening ceremony</span></b></span></li>
-    </ul>
-  </div>
-
-  <div class="card day warm">
-    <div class="head"><b><span class="pt">Sáb 17 · Finais</span><span class="en">Sat 17 · Finals</span></b><span class="tag orange"><span class="pt">CADETE MANHÃ · JÚNIOR TARDE</span><span class="en">CADET AM · JUNIOR PM</span></span></div>
-    <div class="blk c"><span class="pt">Cadete</span><span class="en">Cadet</span></div>
-    <ul class="prog">
-      <li><span class="tm">10:00–10:20</span><span class="ev"><b><span class="pt">Bronzes kata</span><span class="en">Kata bronzes</span></b> <span><span class="pt">F/M cadete</span><span class="en">F/M cadet</span></span></span></li>
-      <li><span class="tm">10:20–11:05</span><span class="ev"><b><span class="pt">Bronzes kumite</span><span class="en">Kumite bronzes</span></b> <span><span class="pt">todas as categorias cadete</span><span class="en">all cadet categories</span></span></span></li>
-      <li><span class="tm">11:15–11:35</span><span class="ev"><b><span class="pt">Finais kata</span><span class="en">Kata finals</span></b> <span><span class="pt">F/M cadete</span><span class="en">F/M cadet</span></span></span></li>
-      <li class="aw"><span class="tm">11:35–11:50</span><span class="ev"><b><span class="pt">Medalhas</span><span class="en">Medal awards</span></b></span></li>
-      <li><span class="tm">11:50–12:05</span><span class="ev"><b>Kumite M</b> <span>−52 · −57 · −63</span></span></li>
-      <li class="aw"><span class="tm">12:05–12:20</span><span class="ev"><b><span class="pt">Medalhas</span><span class="en">Medal awards</span></b></span></li>
-      <li><span class="tm">12:20–12:35</span><span class="ev"><b>Kumite F</b> <span>−47 · −54 · −61</span></span></li>
-      <li class="aw"><span class="tm">12:35–12:50</span><span class="ev"><b><span class="pt">Medalhas</span><span class="en">Medal awards</span></b></span></li>
-      <li><span class="tm">12:50–13:05</span><span class="ev"><b>Kumite F +61 · M −70 · +70</b></span></li>
-      <li class="aw"><span class="tm">13:05–13:20</span><span class="ev"><b><span class="pt">Medalhas</span><span class="en">Medal awards</span></b></span></li>
-      <li class="aw"><span class="tm">13:20–15:00</span><span class="ev"><b><span class="pt">Pausa de almoço</span><span class="en">Lunch break</span></b></span></li>
-    </ul>
-    <div class="blk j"><span class="pt">Júnior</span><span class="en">Junior</span></div>
-    <ul class="prog">
-      <li><span class="tm">15:00–15:20</span><span class="ev"><b><span class="pt">Bronzes kata</span><span class="en">Kata bronzes</span></b> <span><span class="pt">F/M júnior</span><span class="en">F/M junior</span></span></span></li>
-      <li class="mine"><span class="tm">15:20–16:20</span><span class="ev"><b><span class="pt">Bronzes kumite</span><span class="en">Kumite bronzes</span></b> <span><span class="pt">todas as categorias júnior</span><span class="en">all junior categories</span></span></span></li>
-      <li><span class="tm">16:30–16:50</span><span class="ev"><b><span class="pt">Finais kata</span><span class="en">Kata finals</span></b> <span><span class="pt">F/M júnior</span><span class="en">F/M junior</span></span></span></li>
-      <li class="aw"><span class="tm">16:50–17:05</span><span class="ev"><b><span class="pt">Medalhas</span><span class="en">Medal awards</span></b></span></li>
-      <li><span class="tm">17:05–17:25</span><span class="ev"><b>Kumite M</b> <span>−55 · −61 · −68</span></span></li>
-      <li class="aw"><span class="tm">17:25–17:40</span><span class="ev"><b><span class="pt">Medalhas</span><span class="en">Medal awards</span></b></span></li>
-      <li class="mine"><span class="tm">17:40–18:00</span><span class="ev"><b>Kumite F</b> <span>−48 · </span><b>−53</b><span> · −59</span></span></li>
-      <li class="aw"><span class="tm">18:00–18:15</span><span class="ev"><b><span class="pt">Medalhas</span><span class="en">Medal awards</span></b></span></li>
-      <li class="mine"><span class="tm">18:15–18:40</span><span class="ev"><b>Kumite F −66 · +66 · M −76 · +76</b></span></li>
-      <li class="aw"><span class="tm">18:40–19:00</span><span class="ev"><b><span class="pt">Medalhas</span><span class="en">Medal awards</span></b></span></li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <div class="head"><b><span class="pt">Dom 18 · Finais</span><span class="en">Sun 18 · Finals</span></b><span class="tag purple"><span class="pt">U21 · KATA EQUIPAS</span><span class="en">U21 · TEAM KATA</span></span></div>
-    <ul class="prog">
-      <li><span class="tm">10:00–10:20</span><span class="ev"><b><span class="pt">Bronzes kata</span><span class="en">Kata bronzes</span></b> <span>F/M U21</span></span></li>
-      <li><span class="tm">10:20–11:30</span><span class="ev"><b><span class="pt">Bronzes kumite</span><span class="en">Kumite bronzes</span></b> <span><span class="pt">todas as categorias U21</span><span class="en">all U21 categories</span></span></span></li>
-      <li><span class="tm">11:30–12:00</span><span class="ev"><b><span class="pt">Bronzes kata equipas</span><span class="en">Kata team bronzes</span></b> <span><span class="pt">cadete/júnior</span><span class="en">cadet/junior</span></span></span></li>
-      <li><span class="tm">12:15–12:35</span><span class="ev"><b><span class="pt">Finais kata</span><span class="en">Kata finals</span></b> <span>F/M U21</span></span></li>
-      <li class="aw"><span class="tm">12:35–12:50</span><span class="ev"><b><span class="pt">Medalhas</span><span class="en">Medal awards</span></b></span></li>
-      <li><span class="tm">12:50–13:10</span><span class="ev"><b>Kumite F</b> <span>−50 · −55 · −61</span></span></li>
-      <li class="aw"><span class="tm">13:10–13:25</span><span class="ev"><b><span class="pt">Medalhas</span><span class="en">Medal awards</span></b></span></li>
-      <li><span class="tm">13:25–13:45</span><span class="ev"><b>Kumite M</b> <span>−60 · −67 · −75</span></span></li>
-      <li class="aw"><span class="tm">13:45–14:00</span><span class="ev"><b><span class="pt">Medalhas</span><span class="en">Medal awards</span></b></span></li>
-      <li><span class="tm">14:00–14:15</span><span class="ev"><b>Kumite F</b> <span>−68 · +68</span></span></li>
-      <li class="aw"><span class="tm">14:15–14:30</span><span class="ev"><b><span class="pt">Medalhas</span><span class="en">Medal awards</span></b></span></li>
-      <li><span class="tm">14:30–14:45</span><span class="ev"><b>Kumite M</b> <span>−84 · +84</span></span></li>
-      <li class="aw"><span class="tm">14:45–15:00</span><span class="ev"><b><span class="pt">Medalhas</span><span class="en">Medal awards</span></b></span></li>
-      <li><span class="tm">15:00–15:30</span><span class="ev"><b><span class="pt">Finais kata equipas</span><span class="en">Kata team finals</span></b> <span><span class="pt">cadete/júnior F/M</span><span class="en">cadet/junior F/M</span></span></span></li>
-      <li class="aw"><span class="tm">15:30–15:45</span><span class="ev"><b><span class="pt">Medalhas</span><span class="en">Medal awards</span></b></span></li>
-      <li><span class="tm">15:45</span><span class="ev"><b><span class="pt">Cerimónia de encerramento</span><span class="en">Closing ceremony</span></b></span></li>
-    </ul>
-    <p class="note"><span class="pt">Já estão no ar às 11:10. As finais U21 vêem-se no YouTube da WKF a partir do Porto.</span><span class="en">You're airborne from 11:10. Watch the U21 finals on WKF YouTube from Porto.</span></p>
-  </div>
-</section>
-
-<!-- MAP & TAXI -->
-<section class="panel" id="taxi" role="tabpanel" hidden>
-  <div class="card">
-    <h2 style="margin-bottom:8px"><span class="pt">Uma estrada, três paragens</span><span class="en">One road, three stops</span></h2>
-    <svg class="map" viewBox="0 0 360 300" role="img" aria-label="Schematic map">
-      <rect width="360" height="300" fill="#0f0f12" rx="12"/>
-      <path d="M150 42 C 150 90, 215 120, 215 160 C 215 200, 165 225, 150 262" fill="none" stroke="#2a2a32" stroke-width="14" stroke-linecap="round"/>
-      <path d="M150 42 C 150 90, 215 120, 215 160 C 215 200, 165 225, 150 262" fill="none" stroke="#e9c46a" stroke-width="2.5" stroke-dasharray="6 5" opacity=".8"/>
-      <text x="236" y="112" fill="#5e5e6c" font-family="Space Mono,monospace" font-size="10">DW942</text>
-      <text x="236" y="124" fill="#5e5e6c" font-family="Space Mono,monospace" font-size="10">Bystrzańska →</text>
-      <text x="236" y="136" fill="#5e5e6c" font-family="Space Mono,monospace" font-size="10">Szczyrkowska</text>
-      <text x="330" y="26" fill="#5e5e6c" font-family="Space Mono,monospace" font-size="11" text-anchor="middle">N</text>
-      <path d="M330 30 l0 16" stroke="#5e5e6c" stroke-width="1.5"/><path d="M326 36 l4 -6 l4 6" fill="none" stroke="#5e5e6c" stroke-width="1.5"/>
-      <circle cx="150" cy="42" r="9" fill="#ff6b6b"/>
-      <text x="22" y="38" fill="#ececf1" font-family="DM Sans,sans-serif" font-size="13" font-weight="700">Hala pod Dębowcem</text>
-      <text x="22" y="52" fill="#9a9aa8" font-family="Space Mono,monospace" font-size="10">Karbowa 26 · Bielsko-Biała</text>
-      <circle cx="166" cy="58" r="5" fill="#9b5de5"/>
-      <text x="176" y="62" fill="#9a9aa8" font-family="Space Mono,monospace" font-size="10">Szyndzielnia · 300 m</text>
-      <text x="60" y="110" fill="#f4a261" font-family="Space Mono,monospace" font-size="11">8 km · 15 min</text>
-      <text x="60" y="123" fill="#5e5e6c" font-family="Space Mono,monospace" font-size="10">~40 zł</text>
-      <circle cx="215" cy="160" r="9" fill="#2a9d8f"/>
-      <text x="235" y="158" fill="#ececf1" font-family="DM Sans,sans-serif" font-size="13" font-weight="700">Sum · Bystra</text>
-      <text x="235" y="172" fill="#9a9aa8" font-family="Space Mono,monospace" font-size="10">Szczyrkowska 181</text>
-      <text x="235" y="184" fill="#9a9aa8" font-family="Space Mono,monospace" font-size="10"><tspan class="pt">NÓS</tspan><tspan class="en">YOU</tspan></text>
-      <text x="60" y="212" fill="#f4a261" font-family="Space Mono,monospace" font-size="11">6 km · 10 min</text>
-      <text x="60" y="225" fill="#5e5e6c" font-family="Space Mono,monospace" font-size="10">~30 zł</text>
-      <circle cx="150" cy="262" r="9" fill="#457b9d"/>
-      <text x="170" y="260" fill="#ececf1" font-family="DM Sans,sans-serif" font-size="13" font-weight="700">Hotel Halo · Szczyrk</text>
-      <text x="170" y="274" fill="#9a9aa8" font-family="Space Mono,monospace" font-size="10"><tspan class="pt">Wrzosowa 21 · TONI + SELEÇÃO</tspan><tspan class="en">Wrzosowa 21 · TONI + TEAM</tspan></text>
-      <text x="170" y="288" fill="#5e5e6c" font-family="Space Mono,monospace" font-size="10"><tspan class="pt">16 km do pavilhão · 25 min</tspan><tspan class="en">16 km from arena · 25 min</tspan></text>
-    </svg>
-    <div class="legend">
-      <div><i style="background:#ff6b6b"></i><span class="pt">Pavilhão</span><span class="en">Arena</span></div>
-      <div><i style="background:#2a9d8f"></i><span class="pt">O nosso hotel</span><span class="en">Your hotel</span></div>
-      <div><i style="background:#457b9d"></i><span class="pt">Hotel da seleção</span><span class="en">National team hotel</span></div>
-      <div><i style="background:#9b5de5"></i><span class="pt">Ponto de táxi</span><span class="en">Taxi pickup point</span></div>
+  <div class="card day" style="--acc:var(--teal)">
+    <div class="dh"><h3>Qui 22 · Registo</h3><span class="d">Hotel President</span></div>
+    <div class="tl">
+      <span class="t">manhã</span><span class="e"><b>Livre</b><small>Kata leve em casa ou no training hall do President (10:00–20:00, por reserva). Seminário Wicks 10:00–12:00 se quiseres</small></span>
+      <span class="t">13:00</span><span class="e"><b class="me">Registo de atleta + pesagem + passes</b><small>Hotel President, Leof. Kifisias 43. Ir às 13:00, antes da fila. Passaporte WIKF com assinatura de seminário 2026, cartão de cidadão. Levantar também o passe de treinador, teu e do Vasco</small></span>
+      <span class="t">14:00–17:00</span><span class="e"><b>Ficar em Ampelokipoi</b><small>Almoço na Panormou. Não compensa voltar a Marousi e regressar</small></span>
+      <span class="t">17:00–17:45</span><span class="e"><b class="me">Briefing de treinadores</b><small>Obrigatório. Tu e o Vasco, os 2 lugares da delegação. Fato de treino do clube</small></span>
+      <span class="t">~18:00</span><span class="e"><b>Táxi de volta, jantar cedo, kit pronto</b><small>Gi de kata (K999), gi Shōmen, protecções aka/ao, badge WIKF cosido no gi. Cama 22:00</small></span>
     </div>
-    <p class="note"><span class="pt">Está tudo na DW942, a estrada Bielsko → Szczyrk. O nosso hotel fica a meio, por isso qualquer ida à seleção é pelo mesmo caminho e todos os taxistas conhecem a estrada.</span><span class="en">Everything sits on DW942, the Bielsko → Szczyrk road. Our hotel is the midpoint, so any run to the team is the same road and every driver knows it.</span></p>
   </div>
 
+  <div class="card day" style="--acc:var(--red)">
+    <div class="dh"><h3>Sex 23 · Kata + Tanto Dori</h3><span class="d">Dais · Tatami 2</span></div>
+    <div class="tl">
+      <span class="t">07:30</span><span class="e"><b>Acordar, pequeno-almoço</b><small>Lisboa 05:30</small></span>
+      <span class="t">09:15</span><span class="e"><b>Chegar ao Dais</b><small>8 min a pé. Aquecimento, Jion duas vezes a 80 %</small></span>
+      <span class="t">09:35</span><span class="e"><b>Cafeína 150–200 mg</b><small>60 min antes da chamada</small></span>
+      <span class="t">10:35–12:15</span><span class="e"><b class="me">Kata 18–34 masculino · #146653</b> <span class="pill t2">T2</span><small>19 inscritos. R1 Jion · final Bassai · desempate Kushanku. Rodrigo e Vasco na mesma chave. Lisboa 08:35–10:15</small></span>
+      <span class="t">12:15–14:00</span><span class="e"><b>Almoço no pavilhão</b><small>Não voltes ao Airbnb; o Tanto Dori é logo a seguir</small></span>
+      <span class="t">14:30–14:40</span><span class="e"><b>Tanto Dori 18–34 seniores · #146667</b> <span class="pill t2">T2</span><small>Rodrigo + Vasco. 3 equipas. 14:00–14:30 é o escalão 14–17 antes. Lisboa 12:30</small></span>
+      <span class="t">16:05–17:30</span><span class="e"><b>Bloco de finais</b> <span class="pill t2">T2</span> <span class="pill t3">T3</span><small>Se passares a eliminatória, o Bassai é aqui, quase 4 h depois do Jion. Come, deita-te, aquece outra vez às 15:30</small></span>
+      <span class="t">17:30–18:30</span><span class="e"><b>Cerimónia de medalhas</b><small>Todos os tatamis. Sem pódio: jantar e cama</small></span>
+    </div>
+  </div>
+
+  <div class="card day" style="--acc:var(--orange)">
+    <div class="dh"><h3>Sáb 24 · Kumite +75</h3><span class="d">Dais · Tatami 2</span></div>
+    <div class="tl">
+      <span class="t">08:00</span><span class="e"><b>Acordar</b><small>Manhã lenta. Pequeno-almoço grande, almoço leve às 11:30</small></span>
+      <span class="t">12:15</span><span class="e"><b>Chegar ao Dais</b><small>Aquecimento longo, pernas vivas. Protecções aka e ao à mão</small></span>
+      <span class="t">12:30</span><span class="e"><b>Cafeína 150–200 mg</b></span>
+      <span class="t">13:30–15:25</span><span class="e"><b class="me">Kumite 18–34 masculino +75 kg · #146596</b> <span class="pill t2">T2</span><small>18 inscritos. Eliminatórias + repescagem. Lisboa 11:30–13:25</small></span>
+      <span class="t">16:05–17:00</span><span class="e"><b>Cerimónia de abertura / demo</b></span>
+      <span class="t">17:00–18:00</span><span class="e"><b>Bloco de finais</b> <span class="pill t2">T2</span> <span class="pill t3">T3</span><small>Se chegares à final é aqui, não às 15:25</small></span>
+      <span class="t">18:00–19:00</span><span class="e"><b>Medalhas</b></span>
+      <span class="t">noite</span><span class="e"><b>Jantar e cama</b><small>Domingo chamam às 10:30 no Tatami 3</small></span>
+    </div>
+  </div>
+
+  <div class="card day" style="--acc:var(--purple)">
+    <div class="dh"><h3>Dom 25 · Open + Sayonara</h3><span class="d">Dais · Tatami 3</span></div>
+    <div class="tl">
+      <span class="t">04:00→03:00</span><span class="e"><b>Relógio atrasa 1 h</b><small>Telemóvel trata disto. Mais uma hora de sono</small></span>
+      <span class="t">08:00</span><span class="e"><b>Acordar (já na hora nova)</b><small>Lisboa 06:00</small></span>
+      <span class="t">09:15</span><span class="e"><b>Chegar ao Dais</b><small>Aquecimento como sábado</small></span>
+      <span class="t">09:30</span><span class="e"><b>Cafeína 150–200 mg</b></span>
+      <span class="t">10:30–12:55</span><span class="e"><b class="me">William Millerson Open 18–34 masculino · #222326</b> <span class="pill t3">T3</span><small>24 inscritos, sem limite de peso. Lisboa 08:30–10:55</small></span>
+      <span class="t">13:10</span><span class="e"><b>Suzuki Champions Cup</b><small>Todos os tatamis. Só medalhados seniores de kumite</small></span>
+      <span class="t">14:00–17:05</span><span class="e"><b>Kumite por equipas</b><small>Sem equipa do Braga. Tarde livre até às medalhas, se houver</small></span>
+      <span class="t">17:15</span><span class="e"><b>Cerimónia de medalhas</b><small>Todos os tatamis</small></span>
+      <span class="t">21:00</span><span class="e"><b>Jantar Sayonara</b><small>Hotel President. Com o voo às 06:40, sair às 23:30 no máximo</small></span>
+    </div>
+  </div>
+
+  <div class="card day" style="--acc:var(--blue)">
+    <div class="dh"><h3>Seg 26 · Regresso</h3><span class="d">ATH → MUC → OPO</span></div>
+    <div class="tl">
+      <span class="t">03:30</span><span class="e"><b>Acordar</b><small>Check-in online abre domingo 07:40. Faz na pausa do almoço</small></span>
+      <span class="t">03:50</span><span class="e"><b>Táxi/Uber do Airbnb</b><small>Pede às 03:40. 25 min pela Attiki Odos, sem trânsito</small></span>
+      <span class="t">04:20</span><span class="e"><b>No aeroporto</b><small>Bag drop LH fecha 05:55. 2h20 de margem para 4 pessoas com malas</small></span>
+      <span class="t">06:40</span><span class="e"><b>LH1757 ATH → MUC</b><small>2h35. Aterra 08:15</small></span>
+      <span class="t">10:50</span><span class="e"><b>LH1782 MUC → OPO</b><small>2h35 de ligação. Aterra 12:50 Lisboa</small></span>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============ PROVA ============ -->
+<section id="prova" role="tabpanel" hidden>
+
   <div class="card">
-    <h2 style="margin-bottom:4px"><span class="pt">Percursos</span><span class="en">Routes</span></h2>
-    <div class="route"><span class="dir">Sum → Hala</span><span class="via"><span class="pt">Szczyrkowska para norte → Bystrzańska → direita na Armii Krajowej → Karbowa</span><span class="en">Szczyrkowska north → Bystrzańska → right on Armii Krajowej → Karbowa</span></span><span class="dist">8 km · 15′</span></div>
-    <div class="route"><span class="dir">Sum → Halo</span><span class="via"><span class="pt">Szczyrkowska para sul até Szczyrk → Wrzosowa (ao pé do Hotel Mercure)</span><span class="en">Szczyrkowska south into Szczyrk → Wrzosowa (by Hotel Mercure)</span></span><span class="dist">6 km · 10′</span></div>
-    <div class="route"><span class="dir">Halo → Hala</span><span class="via"><span class="pt">De volta por Bystra na DW942, depois como acima</span><span class="en">Back through Bystra on DW942, then as above</span></span><span class="dist">16 km · 25′</span></div>
-    <div class="route"><span class="dir">KRK → Sum</span><span class="via"><span class="pt">A4 para oeste → S1 para sul → saída Bielsko → DW942 direção Szczyrk</span><span class="en">A4 west → S1 south → exit Bielsko → DW942 toward Szczyrk</span></span><span class="dist">90 km · 1h20</span></div>
-    <div class="row">
-      <a class="btn sm" href="https://www.google.com/maps/dir/?api=1&origin=Szczyrkowska+181,+43-360+Bystra&destination=Karbowa+26,+43-300+Bielsko-Bia%C5%82a&travelmode=driving">Sum → Hala ↗</a>
-      <a class="btn sm" href="https://www.google.com/maps/dir/?api=1&origin=Szczyrkowska+181,+43-360+Bystra&destination=Hotel+Halo+Szczyrk,+Wrzosowa+21,+43-370+Szczyrk&travelmode=driving">Sum → Halo ↗</a>
-      <a class="btn sm" href="https://www.google.com/maps/dir/?api=1&origin=Hotel+Halo+Szczyrk,+Wrzosowa+21,+43-370+Szczyrk&destination=Karbowa+26,+43-300+Bielsko-Bia%C5%82a&travelmode=driving">Halo → Hala ↗</a>
-      <a class="btn sm" href="https://www.google.com/maps/dir/?api=1&origin=Krak%C3%B3w+Airport&destination=Szczyrkowska+181,+43-360+Bystra&travelmode=driving">KRK → Sum ↗</a>
+    <h2>As tuas três entradas</h2>
+    <div class="ev">
+      <div><div class="n">Kata 18–34 masculino <span class="pill t2">Tatami 2</span></div><div class="s">#146653 · 19 inscritos · Jion → Bassai → Kushanku · bloco de finais 16:05–17:30</div></div>
+      <div class="w">Sex 23<br>10:35–12:15<small>Lisboa 08:35</small></div>
+    </div>
+    <div class="ev">
+      <div><div class="n">Kumite 18–34 masculino +75 kg <span class="pill t2">Tatami 2</span></div><div class="s">#146596 · 18 inscritos · regras WKF · bloco de finais 17:00–18:00</div></div>
+      <div class="w">Sáb 24<br>13:30–15:25<small>Lisboa 11:30</small></div>
+    </div>
+    <div class="ev">
+      <div><div class="n">William Millerson Open 18–34 masc. <span class="pill t3">Tatami 3</span></div><div class="s">#222326 · 24 inscritos · sem limite de peso · a chave maior dos três dias</div></div>
+      <div class="w">Dom 25<br>10:30–12:55<small>Lisboa 08:30</small></div>
     </div>
   </div>
 
   <div class="card">
-    <h2 style="margin-bottom:6px"><span class="pt">Mostrar ao taxista</span><span class="en">Show the driver</span></h2>
-    <p class="k" style="margin:0 0 8px"><span class="pt">Toque para copiar, ou mostre o ecrã.</span><span class="en">Tap to copy, or just hold the phone up.</span></p>
-<pre class="pl">→ HALA: Hala pod Dębowcem, ul. Karbowa 26, Bielsko-Biała (obok Hotelu Szyndzielnia)</pre>
-<pre class="pl" style="margin-top:8px">→ NASZ HOTEL: Restauracja Sum, ul. Szczyrkowska 181, Bystra (droga na Szczyrk)</pre>
-<pre class="pl" style="margin-top:8px">→ HOTEL DRUŻYNY: Hotel Halo, ul. Wrzosowa 21, Szczyrk (obok Hotelu Mercure)</pre>
-<pre class="pl" style="margin-top:8px">→ LOTNISKO: Port lotniczy Kraków-Balice, terminal odloty</pre>
-    <p class="tr"><span class="pt">obok = ao lado de · droga na = estrada para · nasz hotel = o nosso hotel · drużyna = equipa · odloty = partidas</span><span class="en">obok = next to · droga na = road to · nasz hotel = our hotel · drużyna = team · odloty = departures</span></p>
-  </div>
-
-  <div class="card">
-    <h2 style="margin-bottom:6px"><span class="pt">Motorista do hotel</span><span class="en">Hotel's driver</span></h2>
-    <div class="contact">
-      <div><div class="n">Sr. Lukas</div><div class="s"><span class="pt">Recomendado pelo Sum. Motorista privado, contar com dinheiro em PLN.</span><span class="en">Recommended by Sum. Private driver, assume cash PLN.</span></div></div>
-      <div class="num big">+48 795 907 777</div>
+    <h2>Rodrigo e Vasco</h2>
+    <div class="ev">
+      <div><div class="n">Kata 18–34 masculino <span class="pill t2">Tatami 2</span></div><div class="s">Na mesma chave que tu. Com 19 inscritos é provável que algum de vocês se cruze cedo</div></div>
+      <div class="w">Sex 23<br>10:35–12:15</div>
     </div>
-    <div class="row"><button class="btn sm" data-copy="+48795907777"><span class="pt">Copiar número</span><span class="en">Copy number</span></button><a class="btn sm" href="https://wa.me/48795907777">WhatsApp ↗</a></div>
-<pre class="pl" style="margin-top:10px">Dzień dobry Panie Łukaszu, polecił Pana hotel Sum w Bystrej. Jesteśmy 3 osoby z Portugalii (tylko plecaki). Potrzebujemy: 1) odbiór z lotniska Kraków-Balice w środę 14.10, lot FR3048 ląduje 15:10, do Szczyrkowskiej 181; 2) w niedzielę 18.10 o 6:15 z hotelu na lotnisko Balice; 3) w czwartek i sobotę przejazdy hotel – Hala pod Dębowcem, czasem też do Hotelu Halo w Szczyrku. Jaka cena? Dziękuję, Pedro</pre>
-    <p class="tr"><span class="pt">Bom dia Sr. Łukasz, o hotel Sum em Bystra recomendou-o. Somos 3 de Portugal (só mochilas). Precisamos: 1) recolha no aeroporto de Cracóvia qua 14.10, voo FR3048 aterra 15:10, para Szczyrkowska 181; 2) dom 18.10 às 06:15 do hotel para o aeroporto; 3) qui e sáb viagens hotel ↔ Hala pod Dębowcem, às vezes ao Hotel Halo em Szczyrk. Qual o preço? Obrigado, Pedro</span><span class="en">Hello Mr Łukasz, the Sum hotel in Bystra recommended you. We are 3 from Portugal (backpacks only). We need: 1) KRK pickup Wed 14.10, FR3048 lands 15:10, to Szczyrkowska 181; 2) Sun 18.10 06:15 hotel → Balice; 3) Thu and Sat rides hotel ↔ Hala pod Dębowcem, sometimes to Hotel Halo in Szczyrk. What price? Thanks, Pedro</span></p>
-  </div>
-
-  <div class="card place">
-    <b>Hotel Halo Szczyrk ★★★</b>
-    <div class="addr">ul. Wrzosowa 21 · 43-370 Szczyrk<br>+48 33 817 86 57 · <span class="pt">receção 24 h</span><span class="en">24 h reception</span></div>
-    <div class="why"><span class="pt">Toni, Leonor, André e a seleção. É hotel oficial, por isso têm o shuttle gratuito da organização para o pavilhão; nós não. Piscina e sauna, restaurante com jantar. Fica numa encosta acima do centro de Szczyrk.</span><span class="en">Toni, Leonor, André and the national team. Official hotel, so they have the free LOC shuttle to the arena; we don't. Pool and sauna, restaurant with dinner. Up a hill above Szczyrk centre.</span></div>
-    <div class="row"><button class="btn sm" data-copy="+48338178657"><span class="pt">Copiar número</span><span class="en">Copy number</span></button><button class="btn sm" data-copy="Hotel Halo, Wrzosowa 21, 43-370 Szczyrk"><span class="pt">Copiar morada</span><span class="en">Copy address</span></button></div>
-  </div>
-
-  <div class="card place">
-    <b>Sum Restauracja i Hotel</b>
-    <div class="addr">Szczyrkowska 181 · 43-360 Bystra<br>+48 664 761 513</div>
-    <div class="why"><span class="pt">Restaurante 12:00–20:00 à semana, 11:00–21:00 sáb. Jantar antes das 19:30 ou no caminho de volta. Estacionamento e Wi-Fi grátis. Pequeno-almoço +30 zł se não estiver incluído.</span><span class="en">Restaurant 12:00–20:00 weekdays, 11:00–21:00 Sat. Eat before 19:30 or on the way back. Free parking, Wi-Fi. Breakfast +30 zł if not in your rate.</span></div>
-    <div class="row"><button class="btn sm" data-copy="+48664761513"><span class="pt">Copiar número</span><span class="en">Copy number</span></button><button class="btn sm" data-copy="Szczyrkowska 181, 43-360 Bystra"><span class="pt">Copiar morada</span><span class="en">Copy address</span></button></div>
-  </div>
-
-  <div class="card place">
-    <b>Hala pod Dębowcem (BBOSiR)</b>
-    <div class="addr">ul. Karbowa 26 · 43-300 Bielsko-Biała<br>+48 33 811 01 55 · admin +48 666 302 790</div>
-    <div class="why"><span class="pt">Não há loja nem bar lá dentro além da zona de catering do evento. O Hotel Szyndzielnia, a 300 m, é onde se apanha táxi depois das sessões.</span><span class="en">No shop or bar inside beyond the event catering zone. Hotel Szyndzielnia 300 m away is the taxi pickup after sessions.</span></div>
-    <div class="row"><button class="btn sm" data-copy="Karbowa 26, 43-300 Bielsko-Biała"><span class="pt">Copiar morada</span><span class="en">Copy address</span></button></div>
-  </div>
-
-  <div class="card">
-    <h2 style="margin-bottom:6px"><span class="pt">Para a receção</span><span class="en">Reception script</span></h2>
-<pre class="pl">Dzień dobry. Czy mogą Państwo zamówić dla nas taksówkę na godzinę 10:00 do Hali pod Dębowcem, ul. Karbowa 26, Bielsko-Biała? Jesteśmy trzy osoby. Dziękuję.</pre>
-    <p class="tr"><span class="pt">Podem chamar-nos um táxi para as 10:00 para a Hala pod Dębowcem, Karbowa 26? Somos três. Obrigado.</span><span class="en">Could you order us a taxi for 10:00 to Hala pod Dębowcem, Karbowa 26? We are three. Thank you.</span></p>
-    <p class="note"><span class="pt">O Bolt funciona em Bielsko e no centro de Szczyrk, pouco em Bystra. Cartão na app. Hotel Szyndzielnia +48 33 813 82 01 se precisarem de táxi chamado do lado do pavilhão.</span><span class="en">Bolt works in Bielsko and Szczyrk centre, thin in Bystra. Card in-app. Hotel Szyndzielnia +48 33 813 82 01 if you need a taxi called from the arena side.</span></p>
-  </div>
-</section>
-
-<!-- PHRASES -->
-<section class="panel" id="phrases" role="tabpanel" hidden>
-  <p class="foot" style="margin:0"><span class="pt">Polaco em cima, para mostrar. Pronúncia aproximada em itálico; sílaba em MAIÚSCULAS é a tónica. Pan = senhor, Pani = senhora.</span><span class="en">Polish on top, to show. Rough pronunciation in mono; CAPITALS mark the stressed syllable. Pan = sir, Pani = madam.</span></p>
-
-  <div class="card">
-    <h2 style="margin-bottom:4px"><span class="pt">Básico</span><span class="en">Basics</span></h2>
-    <div class="ph"><div class="pol">Dzień dobry</div><div class="say">djen DOB-ri</div><div class="mean"><span class="pt">Bom dia / boa tarde</span><span class="en">Good morning / afternoon</span></div></div>
-    <div class="ph"><div class="pol">Dobry wieczór</div><div class="say">DOB-ri VYE-choor</div><div class="mean"><span class="pt">Boa noite (ao chegar)</span><span class="en">Good evening</span></div></div>
-    <div class="ph"><div class="pol">Dziękuję</div><div class="say">djen-KOO-yeh</div><div class="mean"><span class="pt">Obrigado</span><span class="en">Thank you</span></div></div>
-    <div class="ph"><div class="pol">Proszę</div><div class="say">PRO-sheh</div><div class="mean"><span class="pt">Por favor / de nada / aqui tem</span><span class="en">Please / you're welcome / here you go</span></div></div>
-    <div class="ph"><div class="pol">Przepraszam</div><div class="say">psheh-PRA-sham</div><div class="mean"><span class="pt">Desculpe / com licença</span><span class="en">Sorry / excuse me</span></div></div>
-    <div class="ph"><div class="pol">Tak · Nie</div><div class="say">tak · nyeh</div><div class="mean"><span class="pt">Sim · Não</span><span class="en">Yes · No</span></div></div>
-    <div class="ph"><div class="pol">Nie mówię po polsku. Czy mówi Pan/Pani po angielsku?</div><div class="say">nyeh MOO-vyeh po POL-skoo · chi MOO-vee pan/PA-nee po an-GYEL-skoo</div><div class="mean"><span class="pt">Não falo polaco. Fala inglês?</span><span class="en">I don't speak Polish. Do you speak English?</span></div></div>
-    <div class="ph"><div class="pol">Jesteśmy z Portugalii.</div><div class="say">yes-TESH-mi s por-too-GA-lyee</div><div class="mean"><span class="pt">Somos de Portugal.</span><span class="en">We're from Portugal.</span></div></div>
-    <div class="ph"><div class="pol">Nie rozumiem.</div><div class="say">nyeh ro-ZOO-myem</div><div class="mean"><span class="pt">Não percebo.</span><span class="en">I don't understand.</span></div></div>
-    <div class="ph"><div class="pol">Proszę napisać.</div><div class="say">PRO-sheh na-PEE-sach</div><div class="mean"><span class="pt">Escreva, por favor.</span><span class="en">Please write it down.</span></div></div>
-    <div class="ph"><div class="pol">Gdzie jest toaleta?</div><div class="say">gdjeh yest to-a-LE-ta</div><div class="mean"><span class="pt">Onde é a casa de banho?</span><span class="en">Where is the toilet?</span></div></div>
-  </div>
-
-  <div class="card">
-    <h2 style="margin-bottom:4px"><span class="pt">Pagar</span><span class="en">Paying</span></h2>
-    <div class="ph"><div class="pol">Czy można płacić kartą?</div><div class="say">chi MOZH-na PWA-cheech KAR-tom</div><div class="mean"><span class="pt">Aceitam cartão?</span><span class="en">Do you take card?</span></div></div>
-    <div class="ph"><div class="pol">Tylko gotówka?</div><div class="say">TIL-ko go-TOOF-ka</div><div class="mean"><span class="pt">Só dinheiro?</span><span class="en">Cash only?</span></div></div>
-    <div class="ph"><div class="pol">Ile to kosztuje?</div><div class="say">EE-leh to kosh-TOO-yeh</div><div class="mean"><span class="pt">Quanto custa?</span><span class="en">How much is it?</span></div></div>
-    <div class="ph"><div class="pol">Poproszę rachunek.</div><div class="say">po-PRO-sheh ra-KHOO-nek</div><div class="mean"><span class="pt">A conta, por favor.</span><span class="en">The bill, please.</span></div></div>
-    <div class="ph"><div class="pol">W złotych, proszę. Nie w euro.</div><div class="say">v ZWO-tikh PRO-sheh · nyeh v EU-ro</div><div class="mean"><span class="pt">Em złoty, por favor. Não em euros. (no terminal, quando oferecem conversão)</span><span class="en">In złoty, please. Not in euros. (at the terminal, when offered conversion)</span></div></div>
-    <div class="ph"><div class="pol">Gdzie jest bankomat?</div><div class="say">gdjeh yest ban-KO-mat</div><div class="mean"><span class="pt">Onde há um multibanco?</span><span class="en">Where is an ATM?</span></div></div>
-    <div class="ph"><div class="pol">Paragon, proszę.</div><div class="say">pa-RA-gon PRO-sheh</div><div class="mean"><span class="pt">O recibo, por favor.</span><span class="en">Receipt, please.</span></div></div>
-    <div class="ph"><div class="pol">Osobno, proszę.</div><div class="say">o-SOB-no PRO-sheh</div><div class="mean"><span class="pt">Separado, por favor. (contas separadas)</span><span class="en">Separately, please. (split bills)</span></div></div>
-  </div>
-
-  <div class="card">
-    <h2 style="margin-bottom:4px">Táxi</h2>
-    <div class="ph"><div class="pol">Gdzie jest postój taksówek?</div><div class="say">gdjeh yest POS-tooy tak-SOO-vek</div><div class="mean"><span class="pt">Onde é a praça de táxis?</span><span class="en">Where is the taxi rank?</span></div></div>
-    <div class="ph"><div class="pol">Czy może Pan/Pani zamówić nam taksówkę?</div><div class="say">chi MO-zheh pan/PA-nee za-MOO-veech nam tak-SOOF-keh</div><div class="mean"><span class="pt">Pode chamar-nos um táxi?</span><span class="en">Could you call us a taxi?</span></div></div>
-    <div class="ph"><div class="pol">Do Hali pod Dębowcem, proszę.</div><div class="say">do HA-lee pod dem-BOV-tsem PRO-sheh</div><div class="mean"><span class="pt">Para a Hala pod Dębowcem, por favor.</span><span class="en">To Hala pod Dębowcem, please.</span></div></div>
-    <div class="ph"><div class="pol">Do hotelu Sum w Bystrej, proszę.</div><div class="say">do ho-TE-loo soom v BIS-trey PRO-sheh</div><div class="mean"><span class="pt">Para o hotel Sum em Bystra, por favor.</span><span class="en">To the Sum hotel in Bystra, please.</span></div></div>
-    <div class="ph"><div class="pol">Do hotelu Halo w Szczyrku, proszę.</div><div class="say">do ho-TE-loo HA-lo v SHCHIR-koo PRO-sheh</div><div class="mean"><span class="pt">Para o hotel Halo em Szczyrk, por favor.</span><span class="en">To Hotel Halo in Szczyrk, please.</span></div></div>
-    <div class="ph"><div class="pol">Ile to będzie kosztować?</div><div class="say">EE-leh to BEN-djeh kosh-TO-vach</div><div class="mean"><span class="pt">Quanto vai custar?</span><span class="en">How much will it cost?</span></div></div>
-    <div class="ph"><div class="pol">Proszę włączyć taksometr.</div><div class="say">PRO-sheh VWON-chich tak-SO-metr</div><div class="mean"><span class="pt">Ligue o taxímetro, por favor.</span><span class="en">Please use the meter.</span></div></div>
-    <div class="ph"><div class="pol">Jesteśmy trzy osoby.</div><div class="say">yes-TESH-mi tshi o-SO-bi</div><div class="mean"><span class="pt">Somos três.</span><span class="en">We are three.</span></div></div>
-    <div class="ph"><div class="pol">Czy może Pan po nas wrócić o 18:00?</div><div class="say">chi MO-zheh pan po nas VROO-cheech o o-shem-NAS-tey</div><div class="mean"><span class="pt">Pode voltar para nos buscar às 18:00?</span><span class="en">Can you come back for us at 18:00?</span></div></div>
-    <div class="ph"><div class="pol">Proszę tu zatrzymać.</div><div class="say">PRO-sheh too za-TSHI-mach</div><div class="mean"><span class="pt">Pare aqui, por favor.</span><span class="en">Stop here, please.</span></div></div>
-  </div>
-
-  <div class="card">
-    <h2 style="margin-bottom:4px"><span class="pt">Comer</span><span class="en">Food</span></h2>
-    <div class="ph"><div class="pol">Gdzie można coś zjeść?</div><div class="say">gdjeh MOZH-na tsosh zyeshch</div><div class="mean"><span class="pt">Onde podemos comer?</span><span class="en">Where can we eat?</span></div></div>
-    <div class="ph"><div class="pol">Stolik dla trzech osób, proszę.</div><div class="say">STO-leek dla tshekh o-SOOP PRO-sheh</div><div class="mean"><span class="pt">Mesa para três, por favor.</span><span class="en">Table for three, please.</span></div></div>
-    <div class="ph"><div class="pol">Czy jest menu po angielsku?</div><div class="say">chi yest MEH-nee po an-GYEL-skoo</div><div class="mean"><span class="pt">Há menu em inglês?</span><span class="en">Is there an English menu?</span></div></div>
-    <div class="ph"><div class="pol">Do której otwarte?</div><div class="say">do KTOO-rey ot-FAR-teh</div><div class="mean"><span class="pt">Até que horas está aberto?</span><span class="en">Until what time are you open?</span></div></div>
-    <div class="ph"><div class="pol">Woda niegazowana · gazowana</div><div class="say">VO-da nyeh-ga-zo-VA-na · ga-zo-VA-na</div><div class="mean"><span class="pt">Água sem gás · com gás</span><span class="en">Still water · sparkling</span></div></div>
-    <div class="ph"><div class="pol">Kawa, proszę. · Herbata, proszę.</div><div class="say">KA-va · her-BA-ta</div><div class="mean"><span class="pt">Um café, por favor. · Um chá, por favor.</span><span class="en">Coffee, please. · Tea, please.</span></div></div>
-    <div class="ph"><div class="pol">Bez mięsa, proszę.</div><div class="say">bez MYEN-sa</div><div class="mean"><span class="pt">Sem carne, por favor.</span><span class="en">No meat, please.</span></div></div>
-    <div class="ph"><div class="pol">Na wynos.</div><div class="say">na VI-nos</div><div class="mean"><span class="pt">Para levar.</span><span class="en">Takeaway.</span></div></div>
-    <div class="ph"><div class="pol">Smacznego!</div><div class="say">smach-NE-go</div><div class="mean"><span class="pt">Bom apetite! (dizem-vos isto; responde-se "dziękuję")</span><span class="en">Enjoy your meal! (said to you; answer "dziękuję")</span></div></div>
-    <div class="ph"><div class="pol">Pierogi · żurek · kotlet schabowy · placki ziemniaczane</div><div class="say">pye-RO-gee · ZHOO-rek · KOT-let skha-BO-vi · PLATS-kee zhem-nya-CHA-neh</div><div class="mean"><span class="pt">Raviolis polacos · sopa azeda de centeio · costeleta panada · panquecas de batata (o Sum é famoso por estas)</span><span class="en">Polish dumplings · sour rye soup · breaded pork cutlet · potato pancakes (Sum is known for these)</span></div></div>
-  </div>
-
-  <div class="card">
-    <h2 style="margin-bottom:4px">Hotel</h2>
-    <div class="ph"><div class="pol">O której jest śniadanie?</div><div class="say">o KTOO-rey yest shnya-DA-nyeh</div><div class="mean"><span class="pt">A que horas é o pequeno-almoço?</span><span class="en">What time is breakfast?</span></div></div>
-    <div class="ph"><div class="pol">Jakie jest hasło do Wi-Fi?</div><div class="say">YA-kyeh yest HAS-wo do wee-fee</div><div class="mean"><span class="pt">Qual é a password do Wi-Fi?</span><span class="en">What's the Wi-Fi password?</span></div></div>
-    <div class="ph"><div class="pol">Czy mogą Państwo zamówić taksówkę na jutro na 10:00?</div><div class="say">chi MO-gom PAN-stfo za-MOO-veech tak-SOOF-keh na YOO-tro na djeh-SHON-tom</div><div class="mean"><span class="pt">Podem chamar um táxi para amanhã às 10:00?</span><span class="en">Can you book a taxi for tomorrow at 10:00?</span></div></div>
-    <div class="ph"><div class="pol">Czy restauracja jest jeszcze otwarta?</div><div class="say">chi res-tau-RA-tsya yest YESH-cheh ot-FAR-ta</div><div class="mean"><span class="pt">O restaurante ainda está aberto?</span><span class="en">Is the restaurant still open?</span></div></div>
-    <div class="ph"><div class="pol">Wyjeżdżamy w niedzielę o 6:00. Czy to możliwe?</div><div class="say">vi-yezh-DJA-mi v nyeh-DJE-leh o SHOOS-tey · chi to mozh-LEE-veh</div><div class="mean"><span class="pt">Saímos domingo às 6:00. É possível?</span><span class="en">We leave Sunday at 6:00. Is that possible?</span></div></div>
-    <div class="ph"><div class="pol">Klucz do pokoju, proszę.</div><div class="say">klooch do po-KO-yoo</div><div class="mean"><span class="pt">A chave do quarto, por favor.</span><span class="en">The room key, please.</span></div></div>
-    <div class="ph"><div class="pol">Czy jest tu sklep w pobliżu?</div><div class="say">chi yest too sklep f po-BLEE-zhoo</div><div class="mean"><span class="pt">Há alguma loja aqui perto?</span><span class="en">Is there a shop nearby?</span></div></div>
-  </div>
-
-  <div class="card">
-    <h2 style="margin-bottom:4px"><span class="pt">No pavilhão</span><span class="en">At the arena</span></h2>
-    <div class="ph"><div class="pol">Gdzie jest kasa biletowa?</div><div class="say">gdjeh yest KA-sa bee-le-TO-va</div><div class="mean"><span class="pt">Onde é a bilheteira?</span><span class="en">Where is the ticket office?</span></div></div>
-    <div class="ph"><div class="pol">Gdzie jest wejście dla widzów?</div><div class="say">gdjeh yest VEY-shcheh dla VEE-dzoof</div><div class="mean"><span class="pt">Onde é a entrada para o público?</span><span class="en">Where is the spectator entrance?</span></div></div>
-    <div class="ph"><div class="pol">Gdzie jest tatami numer 8?</div><div class="say">gdjeh yest ta-TA-mee NOO-mer O-shem</div><div class="mean"><span class="pt">Onde é o tatami 8?</span><span class="en">Where is tatami 8?</span></div></div>
-    <div class="ph"><div class="pol">Gdzie jest strefa gastronomiczna?</div><div class="say">gdjeh yest STRE-fa gas-tro-no-MEECH-na</div><div class="mean"><span class="pt">Onde é a zona de comida?</span><span class="en">Where is the food area?</span></div></div>
-    <div class="ph"><div class="pol">Czy można tu stać?</div><div class="say">chi MOZH-na too stach</div><div class="mean"><span class="pt">Podemos ficar aqui?</span><span class="en">Can we stand here?</span></div></div>
-    <div class="ph"><div class="pol">Jesteśmy z klubu zawodniczki / zawodnika.</div><div class="say">yes-TESH-mi s KLOO-boo za-vod-NEECH-kee / za-vod-NEE-ka</div><div class="mean"><span class="pt">Somos do clube da atleta / do atleta.</span><span class="en">We're from the athlete's club (f / m).</span></div></div>
-  </div>
-
-  <div class="card">
-    <h2 style="margin-bottom:4px"><span class="pt">Emergência</span><span class="en">Emergency</span></h2>
-    <div class="ph"><div class="pol">Pomocy!</div><div class="say">po-MO-tsi</div><div class="mean"><span class="pt">Socorro!</span><span class="en">Help!</span></div></div>
-    <div class="ph"><div class="pol">Proszę wezwać karetkę.</div><div class="say">PRO-sheh VEZ-vach ka-RET-keh</div><div class="mean"><span class="pt">Chame uma ambulância.</span><span class="en">Call an ambulance.</span></div></div>
-    <div class="ph"><div class="pol">Potrzebujemy lekarza.</div><div class="say">po-tsheh-BOO-ye-mi le-KA-zha</div><div class="mean"><span class="pt">Precisamos de um médico.</span><span class="en">We need a doctor.</span></div></div>
-    <div class="ph"><div class="pol">Gdzie jest apteka?</div><div class="say">gdjeh yest ap-TE-ka</div><div class="mean"><span class="pt">Onde há uma farmácia?</span><span class="en">Where is a pharmacy?</span></div></div>
-    <div class="ph"><div class="pol">Boli mnie tutaj.</div><div class="say">BO-lee mnyeh TOO-tay</div><div class="mean"><span class="pt">Dói-me aqui.</span><span class="en">It hurts here.</span></div></div>
-    <div class="ph"><div class="pol">Zgubiłem / zgubiłam telefon · paszport.</div><div class="say">zgoo-BEE-wem / zgoo-BEE-wam te-LE-fon · PASH-port</div><div class="mean"><span class="pt">Perdi (ele / ela) o telemóvel · o passaporte.</span><span class="en">I (m / f) lost my phone · passport.</span></div></div>
-    <div class="ph"><div class="pol">Mam alergię na …</div><div class="say">mam a-LER-gyeh na</div><div class="mean"><span class="pt">Sou alérgico a …</span><span class="en">I'm allergic to …</span></div></div>
-    <div class="ph"><div class="pol">Proszę zadzwonić pod ten numer.</div><div class="say">PRO-sheh za-DZVO-neech pod ten NOO-mer</div><div class="mean"><span class="pt">Ligue para este número, por favor. (mostrar o contacto)</span><span class="en">Please call this number. (show the contact)</span></div></div>
-  </div>
-</section>
-
-<!-- MONEY -->
-<section class="panel" id="money" role="tabpanel" hidden>
-  <div class="card">
-    <div class="rate"><span class="big">€1 ≈ 4,38 zł</span><span class="sub">8 Out 2026 · 10 zł ≈ €2,30</span></div>
-    <div class="quick">
-      <div>20 zł<span>€4,60</span></div>
-      <div>50 zł<span>€11,40</span></div>
-      <div>100 zł<span>€22,80</span></div>
-      <div>200 zł<span>€45,70</span></div>
-      <div>500 zł<span>€114</span></div>
-    </div>
-    <p class="note"><span class="pt">Regra de cabeça: <b>dividir por 4 e tirar um bocadinho</b>. Táxi de 45 zł ≈ €10.</span><span class="en">Mental rule: <b>divide by 4, knock off a bit</b>. 45 zł taxi ≈ €10.</span></p>
-  </div>
-
-  <div class="card">
-    <h2 style="margin-bottom:8px"><span class="pt">Cartões</span><span class="en">Cards</span></h2>
-    <table>
-      <tr><td><span class="pt">Restaurantes, lojas, supermercados</span><span class="en">Restaurants, shops, supermarkets</span></td><td class="good"><span class="pt">cartão, contactless</span><span class="en">card, contactless</span></td></tr>
-      <tr><td><span class="pt">Catering do pavilhão, bilheteira</span><span class="en">Venue catering, ticket office</span></td><td class="good"><span class="pt">cartão / PLN / EUR</span><span class="en">card / PLN / EUR</span></td></tr>
-      <tr><td>Bolt, Uber</td><td class="good"><span class="pt">cartão na app</span><span class="en">card in app</span></td></tr>
-      <tr><td><span class="pt">Táxis com taxímetro em Bielsko</span><span class="en">Metered taxis in Bielsko</span></td><td class="good"><span class="pt">quase sempre, perguntar</span><span class="en">usually card, ask first</span></td></tr>
-      <tr><td><span class="pt">Sr. Lukas (motorista privado)</span><span class="en">Mr. Lukas (private driver)</span></td><td class="bad"><span class="pt">contar com dinheiro</span><span class="en">assume cash PLN</span></td></tr>
-      <tr><td><span class="pt">Extras no Sum, bares pequenos em Bystra</span><span class="en">Sum hotel extras, small bars in Bystra</span></td><td class="bad"><span class="pt">talvez só dinheiro</span><span class="en">may be cash only</span></td></tr>
-    </table>
-    <p class="note"><span class="pt">Revolut, Wise ou qualquer Visa/Mastercard funciona. <b>Pagar sempre em PLN</b> quando o terminal oferece "pagar em EUR"; essa conversão custa 3–7 %.</span><span class="en">Revolut / Wise / any Visa-Mastercard works. <b>Always pay in PLN</b> when the terminal offers "pay in EUR"; that conversion costs 3–7 %.</span></p>
-  </div>
-
-  <div class="card">
-    <h2 style="margin-bottom:8px"><span class="pt">Dinheiro vivo</span><span class="en">Cash</span></h2>
-    <table>
-      <tr><td><span class="pt">Levar</span><span class="en">Carry</span></td><td><span class="pt">300 zł cada (~€70)</span><span class="en">300 zł each (~€70)</span></td></tr>
-      <tr><td><span class="pt">Usar ATMs de</span><span class="en">Use ATMs of</span></td><td>PKO BP · Pekao · ING · Santander · mBank</td></tr>
-      <tr><td><span class="pt">Evitar</span><span class="en">Avoid</span></td><td class="bad"><span class="pt">Euronet (azuis), Planet Cash</span><span class="en">Euronet (blue), Planet Cash</span></td></tr>
-      <tr><td><span class="pt">Chegadas KRK</span><span class="en">At KRK arrivals</span></td><td><span class="pt">muito Euronet · levantar pouco ou esperar</span><span class="en">Euronet-heavy · withdraw small or wait</span></td></tr>
-      <tr><td><span class="pt">Centro de Bielsko</span><span class="en">Bielsko centre</span></td><td><span class="pt">ATMs de banco na ul. 11 Listopada</span><span class="en">bank ATMs on ul. 11 Listopada</span></td></tr>
-    </table>
-    <p class="note"><span class="pt">Em qualquer ATM: <b>recusar a conversão</b>, escolher "continuar sem conversão" / "debitar em PLN". A oferta da Euronet parece simpática e custa ~10 %. Os kantors (casas de câmbio) em Bielsko dão taxas justas se levarem euros, mas levantar no ATM com Revolut é mais simples.</span><span class="en">On any ATM: <b>decline conversion</b>, choose "continue without conversion" / "charge in PLN". Euronet's offer looks friendly and costs ~10 %. Kantors (exchange offices) in Bielsko give fair rates if you bring euros, but an ATM withdrawal on Revolut is simpler.</span></p>
-  </div>
-</section>
-
-<!-- EMERGENCY -->
-<section class="panel" id="sos" role="tabpanel" hidden>
-  <div class="card">
-    <div class="contact">
-      <div><div class="n"><span class="pt">Todas as emergências</span><span class="en">All emergencies</span></div><div class="s"><span class="pt">Número europeu, operadores falam inglês</span><span class="en">EU number, English-speaking operators</span></div></div>
-      <div class="num big">112</div>
-    </div>
-    <div class="contact"><div><div class="n"><span class="pt">Ambulância</span><span class="en">Ambulance</span></div></div><div class="num">999</div></div>
-    <div class="contact"><div><div class="n"><span class="pt">Polícia</span><span class="en">Police</span></div></div><div class="num">997</div></div>
-    <div class="contact"><div><div class="n"><span class="pt">Bombeiros</span><span class="en">Fire</span></div></div><div class="num">998</div></div>
-  </div>
-
-  <div class="card place">
-    <b>Szpital Wojewódzki (<span class="pt">Urgências</span><span class="en">A&amp;E</span> / SOR)</b>
-    <div class="addr">al. Armii Krajowej 101 · 43-316 Bielsko-Biała<br><span class="pt">Central</span><span class="en">Switchboard</span> +48 33 810 20 00</div>
-    <div class="why"><span class="pt">Hospital regional principal com urgências 24 h. Na mesma avenida do pavilhão e do Hotel Szyndzielnia, a ~2 km. Para uma lesão sem urgência, ir de táxi; para algo grave, ligar 112 e deixar que encaminhem.</span><span class="en">Main regional hospital with 24 h emergency department. Same avenue as the arena and Hotel Szyndzielnia, ~2 km. For a non-urgent injury go by taxi; for anything serious call 112 and let them route.</span></div>
-    <div class="row"><button class="btn sm" data-copy="al. Armii Krajowej 101, Bielsko-Biała"><span class="pt">Copiar morada</span><span class="en">Copy address</span></button></div>
-  </div>
-
-  <div class="card">
-    <h2 style="margin-bottom:6px"><span class="pt">Pessoas e locais</span><span class="en">People &amp; venue</span></h2>
-    <div class="contact"><div><div class="n">Sum hotel</div><div class="s">Bystra</div></div><div class="num">+48 664 761 513</div></div>
-    <div class="contact"><div><div class="n"><span class="pt">Sr. Lukas, motorista</span><span class="en">Mr. Lukas, driver</span></div></div><div class="num">+48 795 907 777</div></div>
-    <div class="contact"><div><div class="n">Hotel Halo Szczyrk</div><div class="s"><span class="pt">Toni + seleção · 24 h</span><span class="en">Toni + national team · 24 h</span></div></div><div class="num">+48 33 817 86 57</div></div>
-    <div class="contact"><div><div class="n">Hala pod Dębowcem</div><div class="s"><span class="pt">linha geral BBOSiR</span><span class="en">BBOSiR main line</span></div></div><div class="num">+48 33 811 01 55</div></div>
-    <div class="contact"><div><div class="n">Hotel Szyndzielnia</div><div class="s"><span class="pt">ao lado do pavilhão</span><span class="en">next to the arena</span></div></div><div class="num">+48 33 813 82 01</div></div>
-    <div class="contact"><div><div class="n"><span class="pt">Organização · Federação Polaca</span><span class="en">LOC · Polish Karate Union</span></div></div><div class="num" style="font-size:13px">biuro@karate-polska.pl</div></div>
-    <div class="contact"><div><div class="n"><span class="pt">Transfers oficiais (TTM Studio)</span><span class="en">Official transfers (TTM Studio)</span></div><div class="s">Marek Kamiński</div></div><div class="num">+48 679 552 120</div></div>
-  </div>
-
-  <div class="card">
-    <h2 style="margin-bottom:6px">Portugal</h2>
-    <div class="contact"><div><div class="n"><span class="pt">Embaixada de Portugal, Varsóvia</span><span class="en">Embassy of Portugal, Warsaw</span></div><div class="s">ul. Ateńska 37 · <span class="pt">secção consular</span><span class="en">consular section</span></div></div><div class="num">+48 22 511 10 10</div></div>
-    <div class="contact"><div><div class="n">Gabinete de Emergência Consular</div><div class="s"><span class="pt">24 h, Lisboa</span><span class="en">24 h, Lisbon</span></div></div><div class="num">+351 217 929 055</div></div>
-    <p class="note"><span class="pt">Farmácias: seg–sex 08:00–18:00, pelo menos uma 24 h em Bielsko (perguntar no 112 ou no hotel). Levar o básico; em Bystra não há nada aberto ao domingo.</span><span class="en">Pharmacies: Mon–Fri 08:00–18:00, at least one 24 h in Bielsko (ask 112 or the hotel). Pack your own basics; nothing is open in Bystra on Sunday.</span></p>
-  </div>
-  <p class="foot"><span class="pt">O Cartão Europeu de Seguro de Doença cobre o sistema público na Polónia. O seguro de viagem continua a ser preciso para privado ou repatriamento.</span><span class="en">EHIC/European health card covers public care in Poland. Travel insurance still needed for anything private or for repatriation.</span></p>
-</section>
-
-<!-- FLIGHTS -->
-<section class="panel" id="flights" role="tabpanel" hidden>
-  <div class="card">
-    <div class="tag purple"><span class="pt">QUA 14 OUT</span><span class="en">WED 14 OCT</span> · FR 3048</div>
-    <div class="flight">
-      <div><div class="t">10:35</div><div class="c">Porto OPO</div></div>
-      <div class="mid">3h35<b>→</b></div>
-      <div class="r"><div class="t">15:10</div><div class="c">Kraków KRK</div></div>
+    <div class="ev">
+      <div><div class="n">Tanto Dori 18–34 seniores <span class="pill t2">Tatami 2</span></div><div class="s">#146667 · 3 equipas · faca metálica embotada · AKA começa, bandeiras</div></div>
+      <div class="w">Sex 23<br>14:30–14:40</div>
     </div>
   </div>
+
   <div class="card">
-    <div class="tag purple"><span class="pt">DOM 18 OUT</span><span class="en">SUN 18 OCT</span> · FR 3047</div>
-    <div class="flight">
-      <div><div class="t">11:10</div><div class="c">Kraków KRK</div></div>
-      <div class="mid">3h50<b>→</b></div>
-      <div class="r"><div class="t">14:00</div><div class="c">Porto OPO</div></div>
+    <h2>Regras de kata que te afectam</h2>
+    <ul>
+      <li><b>R1 obrigatório:</b> Jion (seniores 18–34, tabela WIKF).</li>
+      <li><b>R2:</b> kata à escolha, diferente da R1. Só katas superiores neste escalão.</li>
+      <li><b>R3, se existir:</b> kata nova, nem a da R1 nem a da R2.</li>
+      <li><b>Desempate:</b> kata diferente da ronda anterior. Daí o Kushanku.</li>
+      <li>Cartão numérico oficial WIKF. Sem limite de atletas por país.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Regras de kumite que te afectam</h2>
+    <ul>
+      <li>Regras WKF. Árbitros WKF/EKF.</li>
+      <li><b>Pesagem obrigatória e "muito rigorosa"</b> na categoria inscrita. +75 não tem tecto, só piso.</li>
+      <li>Badge WIKF no gi. Sem badge, sem tatami.</li>
+      <li>Um treinador junto ao tatami por categoria, com acreditação e fato de treino do país. Tu e o Vasco têm acreditação de treinador: um de vocês pode sentar-se no outro quando não estiver a competir.</li>
+      <li>Medalhas: de gi, sem sapatos, sem bandeiras.</li>
+      <li>Mudar de categoria agora custa 20 € e exige justificação do chefe de delegação.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Equipamento obrigatório</h2>
+    <ul>
+      <li>Luvas vermelhas e azuis</li>
+      <li>Caneleiras + protecção de pé, vermelhas e azuis</li>
+      <li>Protecção de tronco por baixo do gi (+14 anos)</li>
+      <li>Protector bucal</li>
+      <li>Coquilha</li>
+    </ul>
+    <p style="margin-top:8px"><span class="eye">Kit confirmado em Matosinhos</span><br>adidas K999 Shori para kata · gi Shōmen 180 para kumite · SMAI aka/ao · protector Sisu Aero 3D.</p>
+  </div>
+
+  <div class="card">
+    <h2>Lembretes de plano</h2>
+    <ul>
+      <li>Kumite: contra-atacante. Distância tua, esperar a entrada, bater na entrada. Kizami, gyaku jodan, gyaku chudan. Fintas só com a perna da frente. Pernas para saltitar, não para atacar.</li>
+      <li>Kata: Bassai precisa de uma passagem calma na quinta de manhã. Nada de Wanshu.</li>
+      <li>Cafeína: 150–200 mg, 60 min antes, mesma dose nos três dias. Corte ao meio-dia. O propranolol esconde o coração, não uses a pulsação como medida.</li>
+    </ul>
+  </div>
+
+</section>
+
+<!-- ============ ROTAS ============ -->
+<section id="rotas" role="tabpanel" hidden>
+
+  <div class="card">
+    <h2>As três moradas</h2>
+    <div class="kv">
+      <span class="k">Airbnb</span><span class="v"><b>Mpasdeki 3</b>, Marousi 151 26</span>
+      <span class="k">Pavilhão</span><span class="v"><b>Dais Sports Center</b>, Kyprion Agoniston 89–91, 151 26 Marousi · <a href="https://www.daissports.gr/">daissports.gr</a></span>
+      <span class="k">Hotel sede</span><span class="v"><b>President Hotel</b>, Leof. Kifisias 43, 115 23 Athens (Ampelokipoi) · metro Panormou L3, 600 m</span>
+      <span class="k">Aeroporto</span><span class="v"><b>Athens Eleftherios Venizelos (ATH)</b>, Spata</span>
     </div>
-    <p class="note"><span class="pt">No KRK às <b>08:30</b> → sair de Bystra às 06:15. Marcar com o Lukas ou uma empresa de transfers; não há transporte público que sirva a um domingo de manhã.</span><span class="en">At KRK by <b>08:30</b> → leave Bystra 06:15. Pre-book with Lukas or a transfer company; nothing public does this on a Sunday morning.</span></p>
+    <div class="row" style="margin-top:12px">
+      <button class="copy" data-copy="Mpasdeki 3, Marousi 151 26, Greece"><code>Mpasdeki 3, Marousi 151 26</code> copiar</button>
+      <button class="copy" data-copy="Kyprion Agoniston 89, Marousi 151 26, Greece"><code>Kyprion Agoniston 89, Marousi</code> copiar</button>
+      <button class="copy" data-copy="Leoforos Kifisias 43, Athens 115 23, Greece"><code>Leof. Kifisias 43, Athens</code> copiar</button>
+    </div>
   </div>
-  <div class="card stack">
-    <div class="kv"><span class="k"><span class="pt">Reserva Ryanair</span><span class="en">Booking</span></span><span class="v">NYSY5R</span></div>
-    <div class="kv"><span class="k"><span class="pt">Confirmação do hotel</span><span class="en">Hotel confirmation</span></span><span class="v">5682568712</span></div>
-    <div class="kv"><span class="k"><span class="pt">Bagagem</span><span class="en">Bags</span></span><span class="v"><span class="pt">só item pessoal</span><span class="en">personal item only</span></span></div>
-    <div class="kv"><span class="k">Check-in / out</span><span class="v">15:00 / 11:00</span></div>
-    <div class="kv"><span class="k">KRK → Bystra</span><span class="v">~90 km · 1h20</span></div>
+
+  <div class="card" style="--acc:var(--blue)">
+    <h2>1 · Aeroporto → Airbnb</h2>
+    <div class="route">
+      <div class="dot l"></div><div class="st"><b>Saída das chegadas, praça de táxis</b><small>Fila oficial à porta. Mostra a morada copiada em cima. Uber em Atenas chama táxis licenciados, FreeNow também; na praça é mais rápido com 4 pessoas e 4 malas.</small></div>
+      <div class="dot l"></div><div class="st"><b>Attiki Odos, 27 km, 25–35 min</b><small>Taxímetro 38–52 € com portagem. A dividir por 4. Pede recibo.</small></div>
+      <div class="dot"></div><div class="st"><b>Mpasdeki 3</b><small>Chegada ~16:00 se as malas saírem às 15:20.</small></div>
+    </div>
+    <p class="note" style="margin-top:12px">Alternativa a 4 €: Proastiakos do aeroporto até Neratziotissa (35 min, hora a hora) e táxi 5 min até à porta. Só compensa se a fila de táxis estiver absurda.</p>
   </div>
+
+  <div class="card" style="--acc:var(--teal)">
+    <h2>2 · Airbnb → Dais Sports Center</h2>
+    <div class="route">
+      <div class="dot l"></div><div class="st"><b>A pé, ~600 m, 8 min</b><small>Mpasdeki 3 fica a nordeste do pavilhão, entre Marousi e Vrilissia. Sair pela Kyprion Agoniston para sul.</small></div>
+      <div class="dot"></div><div class="st"><b>Dais, Kyprion Agoniston 89–91</b><small>Chegar 09:15 sexta, 12:15 sábado, domingo conforme o Sportdata.</small></div>
+    </div>
+    <p class="note teal" style="margin-top:12px">Faz o percurso quarta à noite ou quinta de manhã, para na sexta ser automático. Confirma o ponto exacto do Airbnb no Google Maps quando tiveres o pin do anfitrião.</p>
+  </div>
+
+  <div class="card" style="--acc:var(--orange)">
+    <h2>3 · Airbnb → President Hotel</h2>
+    <div class="route">
+      <div class="dot l"></div><div class="st"><b>Táxi/Uber, ~9 km pela Kifisias, 20–35 min</b><small>12–18 €. A Kifisias à tarde é lenta; conta com 35 min na quinta às 12:30.</small></div>
+      <div class="dot l"></div><div class="st"><b>President Hotel, Leof. Kifisias 43</b><small>Quinta: registo 13:00, briefing de treinadores 17:00–17:45. Seminários Wicks quarta 17–19 e quinta 10–12.</small></div>
+      <div class="dot"></div><div class="st"><b>Regresso igual</b><small>Domingo à noite depois do Sayonara: táxi à porta do hotel, não andes à procura.</small></div>
+    </div>
+  </div>
+
+  <div class="card" style="--acc:var(--purple)">
+    <h2>4 · Airbnb → Aeroporto, segunda 03:50</h2>
+    <div class="route">
+      <div class="dot l"></div><div class="st"><b>Pedir Uber/FreeNow às 03:40</b><small>Às 4 da manhã há menos carros. Se não aparecer em 5 min, liga a um rádio-táxi (número do anfitrião).</small></div>
+      <div class="dot l"></div><div class="st"><b>Attiki Odos sem trânsito, 25 min</b><small>Suplemento nocturno nos táxis entre 00:00 e 05:00.</small></div>
+      <div class="dot"></div><div class="st"><b>ATH 04:20</b><small>Bag drop fecha 05:55. Boarding provável 06:10.</small></div>
+    </div>
+    <p class="note red" style="margin-top:12px">Pede ao anfitrião do Airbnb o número de um rádio-táxi local na quarta. É o plano B para as 03:40.</p>
+  </div>
+
 </section>
 
-<!-- TICKETS -->
-<section class="panel" id="tickets" role="tabpanel" hidden>
+<!-- ============ VOOS ============ -->
+<section id="voos" role="tabpanel" hidden>
+
   <div class="card">
-    <table>
-      <tr><td><span class="pt">Dia 1–3 avulso (eliminatórias)</span><span class="en">Day 1–3 single (eliminations)</span></td><td>50 zł · €12,50</td></tr>
-      <tr><td><span class="pt">Dia 4–5 avulso (finais)</span><span class="en">Day 4–5 single (finals)</span></td><td>60 zł · €15</td></tr>
-      <tr><td><span class="pt">Passe finais (sáb + dom)</span><span class="en">Finals pass (Sat + Sun)</span></td><td>€25</td></tr>
-      <tr><td><span class="pt">Passe completo</span><span class="en">Full event pass</span></td><td>€40</td></tr>
-    </table>
-    <p class="note"><span class="pt">Quinta + sábado avulsos = <b>110 zł ≈ €27,50 cada</b>. Comprar online. Perguntar primeiro ao Toni se o staff do SC Braga tem acreditação de delegação pela FNK-P; se sim, não são precisos bilhetes.</span><span class="en">Thursday + Saturday singles = <b>110 zł ≈ €27.50 each</b>. Buy online. First ask Toni whether SC Braga staff get delegation accreditation through FNK-P; if yes, no tickets.</span></p>
-    <div class="row"><a class="btn" href="https://worldkarate2026.kupbilecik.pl/"><span class="pt">Comprar bilhetes ↗</span><span class="en">Buy tickets ↗</span></a><a class="btn" href="https://www.sportdata.org/wkf/set-online/veranstaltung_info_main.php?active_menu=calendar&vernr=1145"><span class="pt">Sorteio Sportdata ↗</span><span class="en">Sportdata draw ↗</span></a></div>
+    <h2>Reserva Lufthansa · 9UEBRF · 4 passageiros</h2>
+    <p>Ida com check-in feito e lugares marcados. Volta: check-in online abre <b>domingo 25 às 07:40</b> (Atenas). Wi-Fi a bordo em todos os voos. Star Alliance.</p>
   </div>
-  <div class="card stack">
-    <div class="kv"><span class="k">Stream</span><span class="v"><span class="pt">YouTube WKF, todos os tatamis</span><span class="en">WKF YouTube, every tatami</span></span></div>
-    <div class="kv"><span class="k"><span class="pt">Tempo</span><span class="en">Weather</span></span><span class="v"><span class="pt">10–15 °C · noites frias</span><span class="en">10–15 °C · colder nights</span></span></div>
-    <div class="kv"><span class="k"><span class="pt">Tomadas</span><span class="en">Plugs</span></span><span class="v"><span class="pt">tipo C/E · iguais a PT</span><span class="en">Type C/E · same as PT</span></span></div>
-    <div class="kv"><span class="k"><span class="pt">Comida no pavilhão</span><span class="en">Venue food</span></span><span class="v"><span class="pt">zona de catering · PLN/EUR/cartão</span><span class="en">catering zone · PLN/EUR/card</span></span></div>
-    <div class="kv"><span class="k"><span class="pt">Lojas ao domingo</span><span class="en">Sunday shops</span></span><span class="v"><span class="pt">quase tudo fechado</span><span class="en">mostly closed</span></span></div>
+
+  <div class="card">
+    <div class="eye">Qua 21 Out · ida</div>
+    <div class="flight"><div class="ap">OPO<small>06:20 Lisboa</small></div><div class="arr">LH1789<b>2h50</b></div><div class="ap r">MUC<small>10:10 local</small></div></div>
+    <div class="kv">
+      <span class="k">Boarding</span><span class="v">05:50 · Grupo 4 · Terminal 1</span>
+      <span class="k">Lugares</span><span class="v">6C · 6B · 5C · 5B</span>
+      <span class="k">Chegada</span><span class="v">Munique T2, Gate G30</span>
+      <span class="k">Bag drop</span><span class="v">Fecha 05:35. Balcão: ver painel</span>
+    </div>
+    <div class="flight" style="margin-top:16px"><div class="ap">MUC<small>11:20 local</small></div><div class="arr">LH1752<b>2h35</b></div><div class="ap r">ATH<small>14:55 local</small></div></div>
+    <div class="kv">
+      <span class="k">Ligação</span><span class="v">70 min · T2 Área G · 5 min a pé</span>
+      <span class="k">Boarding</span><span class="v">10:50</span>
+      <span class="k">Lugares</span><span class="v">23A · 22A · 29F · 29E</span>
+    </div>
   </div>
+
+  <div class="card">
+    <div class="eye">Seg 26 Out · volta</div>
+    <div class="flight"><div class="ap">ATH<small>06:40 local</small></div><div class="arr">LH1757<b>2h35</b></div><div class="ap r">MUC<small>08:15 local</small></div></div>
+    <div class="flight"><div class="ap">MUC<small>10:50 local</small></div><div class="arr">LH1782<b>3h00</b></div><div class="ap r">OPO<small>12:50 Lisboa</small></div></div>
+    <div class="kv">
+      <span class="k">Ligação</span><span class="v">2h35 em Munique</span>
+      <span class="k">Lugares</span><span class="v">Por atribuir. Marca no check-in de domingo</span>
+      <span class="k">No ATH</span><span class="v">04:20 · bag drop fecha 05:55</span>
+      <span class="k">Sair Marousi</span><span class="v">03:50</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Em caso de atraso</h2>
+    <ul>
+      <li>Ida: se o LH1789 atrasar mais de 40 min, a ligação de 70 min cai. A app Lufthansa remarca sozinha; o próximo MUC–ATH é ao fim da tarde. Avisa o Toni.</li>
+      <li>Volta: 2h35 em Munique aguenta um atraso de 1h30.</li>
+      <li>Malas: etiqueta até ATH/OPO, não há recolha em Munique.</li>
+    </ul>
+  </div>
+
 </section>
 
-</div>
-<div class="toast" id="toast"><span class="pt">Copiado</span><span class="en">Copied</span></div>
+<!-- ============ PROGRAMA ============ -->
+<section id="programa" role="tabpanel" hidden>
+
+  <div class="card">
+    <h2>12.º WIKF Global Cup · programa oficial</h2>
+    <p>Boletim VR3 cruzado com o timetable ao vivo do Sportdata (21 Out 03:30). Hora de Atenas. Kata, Tanto Dori e kumite de miúdos na sexta; kumite individual no sábado; Open, Suzuki Cup e equipas no domingo.</p>
+    <p><a href="https://www.sportdata.org/setglinc/dtm/dtm_timetable.php?system=karate&amp;eventid=9856&amp;day=2026-10-23">Sportdata ao vivo, sexta</a> · <a href="https://www.sportdata.org/setglinc/dtm/dtm_timetable.php?system=karate&amp;eventid=9856&amp;day=2026-10-24">sábado</a> · <a href="https://www.sportdata.org/setglinc/dtm/dtm_timetable.php?system=karate&amp;eventid=9856&amp;day=2026-10-25">domingo</a></p>
+  </div>
+
+  <div class="card">
+    <div class="eye">Qua 21 · Hotel President</div>
+    <div class="tl">
+      <span class="t">10:00–17:00</span><span class="e">Training hall por reserva</span>
+      <span class="t">13:00–16:00</span><span class="e">Check-in, levantamento de passes</span>
+      <span class="t">17:00–19:00</span><span class="e">Seminário Jon Wicks</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="eye">Qui 22 · Hotel President</div>
+    <div class="tl">
+      <span class="t">10:00–12:00</span><span class="e">Seminário Jon Wicks</span>
+      <span class="t">10:00–20:00</span><span class="e">Training hall por reserva</span>
+      <span class="t">13:00–20:00</span><span class="e"><b>Registo de atletas, pesagem, passes</b></span>
+      <span class="t">15:00–16:00</span><span class="e">Briefing árbitros kata / Tanto Dori</span>
+      <span class="t">16:00–16:45</span><span class="e">Reunião árbitros kumite</span>
+      <span class="t">17:00–17:45</span><span class="e"><b>Briefing de treinadores</b> (tu + Vasco, 2 por delegação)</span>
+      <span class="t">18:00</span><span class="e">World Congress, jantar de oficiais a seguir</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="eye">Sex 23 · Dais</div>
+    <div class="tl">
+      <span class="t">10:00–16:00</span><span class="e">Eliminatórias de kata · Tanto Dori · kumite 8–9 e 10–11 anos, 4 tatamis</span>
+      <span class="t">16:05–17:30</span><span class="e">Bloco de finais, tatamis 2 e 3</span>
+      <span class="t">17:30–18:30</span><span class="e">Medalhas, todos os tatamis</span>
+    </div>
+    <p style="margin-top:10px"><span class="eye">Tatami 2, do Sportdata</span></p>
+    <div class="scroll"><table>
+      <tr><th>Hora</th><th>Categoria</th><th>#</th><th>Insc.</th></tr>
+      <tr><td>10:00–10:35</td><td>Kata 18–34 feminino</td><td>146661</td><td>8</td></tr>
+      <tr><td><b>10:35–12:15</b></td><td><b>Kata 18–34 masculino</b></td><td>146653</td><td>19</td></tr>
+      <tr><td>12:15–14:00</td><td>Kata +45 masc. super veteranos</td><td>146665</td><td>20</td></tr>
+      <tr><td>14:00–14:30</td><td>Tanto Dori 14–17</td><td>222329</td><td>6</td></tr>
+      <tr><td><b>14:30–14:40</b></td><td><b>Tanto Dori 18–34 seniores</b></td><td>146667</td><td>3</td></tr>
+      <tr><td>14:40–14:50</td><td>Kumite 8–9 fem. +30</td><td>146608</td><td>3</td></tr>
+      <tr><td>14:50–15:30</td><td>Kumite 10–11 masc. −40</td><td>146581</td><td>10</td></tr>
+      <tr><td>15:30–15:50</td><td>Kumite 10–11 fem. +40 G1</td><td>232056</td><td>4</td></tr>
+      <tr><td><b>16:05–17:30</b></td><td><b>Bloco de finais (T2 + T3)</b></td><td>—</td><td>—</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <div class="eye">Sáb 24 · Dais</div>
+    <div class="tl">
+      <span class="t">09:00–16:05</span><span class="e">Eliminatórias e repescagem, kumite individual, 4 tatamis</span>
+      <span class="t">16:05–17:00</span><span class="e">Cerimónia de abertura e demonstração</span>
+      <span class="t">17:00–18:00</span><span class="e">Bloco de finais, tatamis 2 e 3</span>
+      <span class="t">18:00–19:00</span><span class="e">Medalhas, todos os tatamis</span>
+    </div>
+    <p style="margin-top:10px"><span class="eye">Tatami 2, do Sportdata</span></p>
+    <div class="scroll"><table>
+      <tr><th>Hora</th><th>Categoria</th><th>#</th><th>Insc.</th></tr>
+      <tr><td>11:55–12:50</td><td>Kumite cadetes fem. −54</td><td>146615</td><td>11</td></tr>
+      <tr><td>12:50–13:30</td><td>Kumite juniores masc. +75</td><td>146590</td><td>5</td></tr>
+      <tr><td><b>13:30–15:25</b></td><td><b>Kumite 18–34 masc. +75 kg</b></td><td>146596</td><td>18</td></tr>
+      <tr><td>15:30–16:00</td><td>Kumite U21 masc. −67</td><td>146591</td><td>4</td></tr>
+      <tr><td><b>17:00–18:00</b></td><td><b>Bloco de finais (T2 + T3)</b></td><td>—</td><td>—</td></tr>
+    </table></div>
+    <p style="margin-top:8px"><span class="eye">Para referência</span><br>−75 kg no T3 em dois grupos, 14:05–15:05. −67 kg no T1, 14:15–15:15. O +75 é a maior chave sénior masculina do dia.</p>
+  </div>
+
+  <div class="card">
+    <div class="eye">Dom 25 · Dais</div>
+    <div class="tl">
+      <span class="t">09:00–13:10</span><span class="e">Open · Sir William Millerson Memorial Cup, 4 tatamis</span>
+      <span class="t">13:10</span><span class="e">Suzuki Champions Cup, todos os tatamis (medalhados seniores)</span>
+      <span class="t">14:00–17:05</span><span class="e">Kumite por equipas, tatamis 2 e 3</span>
+      <span class="t">17:15</span><span class="e">Medalhas, todos os tatamis</span>
+      <span class="t">21:00</span><span class="e">Jantar Sayonara · Hotel President</span>
+    </div>
+    <p style="margin-top:10px"><span class="eye">Tatamis 1 e 3, do Sportdata</span></p>
+    <div class="scroll"><table>
+      <tr><th>Hora</th><th>Categoria</th><th>Tat.</th><th>#</th><th>Insc.</th></tr>
+      <tr><td>09:00–09:10</td><td>Open +35 feminino</td><td>1</td><td>222317</td><td>2</td></tr>
+      <tr><td>09:10–10:05</td><td>Open +35 masculino</td><td>1</td><td>222318</td><td>10</td></tr>
+      <tr><td>10:05–12:00</td><td>Open 14–15 masculino</td><td>1</td><td>222322</td><td>24</td></tr>
+      <tr><td>12:00–13:10</td><td>Open 16–17 feminino</td><td>1</td><td>222323</td><td>14</td></tr>
+      <tr><td>09:00–10:30</td><td>Open 12–13 masculino</td><td>3</td><td>222320</td><td>25</td></tr>
+      <tr><td><b>10:30–12:55</b></td><td><b>Open 18–34 masculino</b></td><td><b>3</b></td><td>222326</td><td>24</td></tr>
+      <tr><td>11:15–12:45</td><td>Open 18–34 feminino</td><td>2</td><td>222325</td><td>15</td></tr>
+          </table></div>
+  </div>
+
+  <div class="card">
+    <h2>Taxas e bilhetes</h2>
+    <div class="kv">
+      <span class="k">Kata + kumite</span><span class="v">100 € por atleta · entrada extra 40 €</span>
+      <span class="k">Tanto Dori</span><span class="v">60 € por equipa</span>
+      <span class="k">Seminário</span><span class="v">40 € um dia · 65 € dois</span>
+      <span class="k">Espectadores</span><span class="v">10 € dia · 25 € três dias · lugares limitados</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============ INFO ============ -->
+<section id="info" role="tabpanel" hidden>
+
+  <div class="card">
+    <h2>Contactos</h2>
+    <div class="kv">
+      <span class="k">Emergência</span><span class="v"><b>112</b> · polícia, bombeiros, médica</span>
+      <span class="k">Organização</span><span class="v">Renaissance Hellas (hotéis, transportes) · +30 211 7517 432 · móvel +30 6942 290812</span>
+      <span class="k">Pavilhão</span><span class="v">Dais, Ioannis Skouras (assistant manager) · <a href="https://www.daissports.gr/">daissports.gr</a></span>
+      <span class="k">Director</span><span class="v">Michael Giannopoulos · chefe de arbitragem Kjell Jacobsen · supervisor Alain Rayen</span>
+      <span class="k">Hospital</span><span class="v">KAT General Hospital, Nikis 2, Kifisia · a 3 km do Dais, o mais perto</span>
+    </div>
+    <div class="row" style="margin-top:12px">
+      <button class="copy" data-copy="+306942290812"><code>+30 6942 290812</code> copiar</button>
+      <button class="copy" data-copy="+302117517432"><code>+30 211 7517 432</code> copiar</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Documentos para o registo</h2>
+    <ul>
+      <li>Passaporte WIKF com assinatura de seminário válida para 2026. Sem isto não há prova.</li>
+      <li>Cartão de cidadão (UE, chega para entrar e para o SIM se precisares).</li>
+      <li>Quota anual do país 2026 paga, confirmada pelo Toni.</li>
+      <li>Badge WIKF já cosido no gi.</li>
+      <li>Acreditação de treinador para ti e para o Vasco: levantar no registo, usar sempre junto ao tatami. Fato de treino do SC Braga na mala.</li>
+      <li>Seguro de saúde/viagem: o boletim insiste. Cartão Europeu de Seguro de Doença no mínimo.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Dinheiro e telemóvel</h2>
+    <div class="grid2">
+      <div class="tile"><div class="k">Moeda</div><div class="v">Euro<small>sem câmbio</small></div></div>
+      <div class="tile"><div class="k">Cartões</div><div class="v">Visa / MC<small>Amex pouco aceite · contactless em todo o lado</small></div></div>
+      <div class="tile"><div class="k">Roaming</div><div class="v">UE<small>plano português sem custo extra</small></div></div>
+      <div class="tile"><div class="k">Tomadas</div><div class="v">C / F<small>iguais às nossas, 230 V</small></div></div>
+    </div>
+    <p style="margin-top:10px">Água da torneira em Atenas é potável. Lojas pequenas fecham à tarde seg/qua/sáb; supermercados 10:00–21:00.</p>
+  </div>
+
+  <div class="card">
+    <h2>Horários de Atenas</h2>
+    <ul>
+      <li><b>Fuso:</b> UTC+3 até domingo 03:00, depois UTC+2. Sempre Lisboa +2 h.</li>
+      <li><b>Restaurantes:</b> abrem ao meio-dia, jantam tarde. Às 20:00 ainda está vazio, bom para ti.</li>
+      <li><b>Bancos:</b> seg–sex 08:00–14:00.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Fontes</h2>
+    <ul>
+      <li>Boletim oficial 12th WIKF Global Cup, VR3 (programa, regras, moradas, contactos)</li>
+      <li>Sportdata, timetable ao vivo por tatami (event 9856), lido a 21 Out 03:30 — muda sem aviso, reler na véspera de cada dia</li>
+      <li>App Lufthansa, reserva 9UEBRF</li>
+      <li>Transfer ATH–Marousi: tarifas de taxímetro e Proastiakos, Oct 2026</li>
+    </ul>
+  </div>
+
+</section>
+
+</main>
+<div class="toast" id="toast" role="status">Copiado</div>
 
 <script>
 (function(){
-  var root=document.documentElement;
-  var lp=document.getElementById('lang-pt'),le=document.getElementById('lang-en');
-  function setLang(l){root.setAttribute('data-lang',l);lp.setAttribute('aria-pressed',l==='pt'?'true':'false');le.setAttribute('aria-pressed',l==='en'?'true':'false');try{localStorage.setItem('bb26lang',l)}catch(e){}}
-  lp.addEventListener('click',function(){setLang('pt')});
-  le.addEventListener('click',function(){setLang('en')});
-  setLang(root.getAttribute('data-lang')==='en'?'en':'pt');
-
-  var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+  var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('section[role="tabpanel"]');
   function show(id){
-    panels.forEach(function(p){p.hidden=p.id!==id});
-    tabs.forEach(function(t){var on=t.dataset.panel===id;t.setAttribute('aria-selected',on?'true':'false');if(on){try{t.scrollIntoView({block:'nearest',inline:'center'})}catch(e){}}});
-    try{localStorage.setItem('bb26tab',id)}catch(e){}
-    window.scrollTo(0,0);
+    var found=false;panels.forEach(function(p){p.hidden=(p.id!==id);if(p.id===id)found=true;});
+    if(!found){id='dias';panels.forEach(function(p){p.hidden=(p.id!==id);});}
+    tabs.forEach(function(t){t.setAttribute('aria-selected',t.dataset.tab===id?'true':'false');});
+    try{localStorage.setItem('ath26tab',id);}catch(e){}
+    window.scrollTo({top:0});
   }
-  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.panel)})});
-  var h=(location.hash||'').replace('#',''),saved=null;
-  try{saved=localStorage.getItem('bb26tab')}catch(e){}
-  var first=h&&document.getElementById(h)?h:(saved&&document.getElementById(saved)?saved:'days');
-  show(first);
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.tab);});});
+  var start=(location.hash||'').replace('#','');
+  if(!start){try{start=localStorage.getItem('ath26tab')||'';}catch(e){}}
+  show(start||'dias');
 
   var toast=document.getElementById('toast'),tm;
-  document.querySelectorAll('[data-copy]').forEach(function(b){
+  function say(m){toast.textContent=m;toast.classList.add('on');clearTimeout(tm);tm=setTimeout(function(){toast.classList.remove('on');},1400);}
+  document.querySelectorAll('.copy').forEach(function(b){
     b.addEventListener('click',function(){
-      var txt=b.dataset.copy;
-      function done(){toast.classList.add('on');clearTimeout(tm);tm=setTimeout(function(){toast.classList.remove('on')},1200)}
-      function fallback(){var s=document.createElement('textarea');s.value=txt;document.body.appendChild(s);s.select();try{document.execCommand('copy');done()}catch(e){}document.body.removeChild(s)}
-      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,fallback)}else{fallback()}
+      var v=b.dataset.copy;
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(v).then(function(){say('Copiado');},function(){fallback(b);});}
+      else fallback(b);
     });
   });
+  function fallback(b){var r=document.createRange();r.selectNodeContents(b.querySelector('code'));var s=window.getSelection();s.removeAllRanges();s.addRange(r);say('Selecionado, copia manualmente');}
 })();
 </script>
-
 </body>
 </html>
